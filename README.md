@@ -186,24 +186,27 @@ HISTORY WIKI CHATBOT/
 
 ---
 
-## 🖥️ Streamlit 데모 화면 캡처 안내
+## 🖥️ Streamlit 웹 데모 화면 (`app.py`)
 
-`streamlit run app.py` 실행 시 아래 3개 탭을 확인할 수 있습니다:
+`streamlit run app.py` 실행 시 아래 3개 탭의 실제 동작 화면입니다:
 
-1. **탭 1 💬 질문하기**:
-   - 질문 입력창 및 1홉/2홉/3홉/거절 예시 질문 버튼
-   - 3블록 최종 답변, 홉별 실제 연결 순회 경로(`traversed_path`, 역방향 표기 포함), 근거 삼중항 표, 원문 근거 문서 Expander
-   - **URL 쿼리 파라미터 자동 실행 지원**: `?q=<질문>&auto=1` 형식으로 특정 질문 자동 입력 및 즉시 실행 가능
-     - 예시: `http://localhost:8501/?q=안중근이%20참여한%20사건은?&auto=1`
-     - 멀티홉 예시: `http://localhost:8501/?q=주기철이%20참여한%20사건에%20같이%20있던%20인물이%20세운%20조직은?&auto=1`
-   - ![질문하기 데모 화면](docs/screenshot_tab1_qa.png) *(데모 실행 후 캡처 저장)*
+### 1. 탭 1 💬 질문하기
+- 질문 입력창 및 1홉/2홉/3홉/거절 예시 질문 원클릭 버튼 (클릭 즉시 자동 실행)
+- 상단 탐색 범위 및 질문 가이드 배너, 3블록 최종 답변, 홉별 실제 연결 순회 경로(`traversed_path`), 근거 삼중항 표, 원문 근거 문서 Expander
+- **URL 쿼리 파라미터 자동 실행 지원**: `?q=<질문>&auto=1` 형식으로 특정 질문 자동 입력 및 즉시 실행 가능
 
-2. **탭 2 📊 평가 결과**:
-   - 홉 수별 대조표, 거절 정확도, 환각 건수, 실패 층(Index/Retrieval/Generation) 자동 분류 집계 카드
-   - ![평가 결과 데모 화면](docs/screenshot_tab2_eval.png) *(데모 실행 후 캡처 저장)*
+![질문하기 데모 화면](docs/screenshot_tab1_qa.png)
 
-3. **탭 3 ⚙️ 설정**:
-   - 안전한 비밀번호 필드 키 입력, 세션 적용/파일 저장/삭제/연결 테스트 버튼, 마스킹된 상태 카드
-   - ![설정 데모 화면](docs/screenshot_tab3_settings.png) *(데모 실행 후 캡처 저장)*
+---
 
-> **스크린샷 캡처 팁**: 브라우저에서 `http://localhost:8501` 접속 후 Windows `Win + Shift + S` 키로 각 탭 영역을 캡처하여 `docs/screenshot_tab1_qa.png`, `docs/screenshot_tab2_eval.png`, `docs/screenshot_tab3_settings.png` 파일로 저장하십시오.
+### 2. 탭 2 📊 평가 결과
+- 홉 수별 대조표 (GraphRAG 100% vs Basic RAG 54.5%), 거절 정확도(100%), 환각 건수(0건), 실패 층(Index/Retrieval/Generation) 자동 분류 집계 카드
+
+![평가 결과 데모 화면](docs/screenshot_tab2_eval.png)
+
+---
+
+### 3. 탭 3 ⚙️ 설정
+- 안전한 비밀번호 필드 키 입력, 세션 적용/파일 저장/삭제/연결 테스트 버튼, 마스킹된 상태 카드
+
+![설정 데모 화면](docs/screenshot_tab3_settings.png)
