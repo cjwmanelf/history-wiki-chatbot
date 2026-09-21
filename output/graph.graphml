@@ -24,14 +24,14 @@
       <data key="d1">2.8 독립 선언;2.8 독립선언;28 독립 선언;2·8 독립 선언;2·8 독립선언;2·8 독립운동;2·8독립 선언;2·8독립선언</data>
       <data key="d2">3·1 운동;김경천 (1888년);김규식;김도연 (정치인);김마리아;김순애;대한독립선언서;대한민국 임시정부;신규식;신한청년당;양전백;여운형;장덕수;조동호;조만식;조소앙</data>
       <data key="d3">16</data>
-      <data key="d4">3</data>
+      <data key="d4">4</data>
     </node>
     <node id="3·1 운동">
       <data key="d0">Event</data>
       <data key="d1">3. 1 인민봉기;3.1 독립운동;3.1 만세 운동;3.1 만세운동;3.1 운동;3.1 인민봉기;3.1 혁명;3.1. 운동;3.1만세 운동;3.1만세시위;3.1만세운동;3.1만세혁명;3.1운동;3.1인민봉기;31 운동;31운동;3·1;3·1 대한 독립 만세 선언;3·1 대한 독립 만세 운동;3·1 독립선언;3·1 독립운동;3·1 만세 운동;3·1 만세운동;3·1 운동;3·1 인민봉기;3·1독립운동;3·1만세 운동;3·1만세시위;3·1만세운동;3·1운동;3·1인민봉기;3․1 운동;3․1운동;3∙1 인민 봉기;3월 1일 운동;곽산 학살 사건;곽산학살사건;기미 독립운동;기미독립운동;맹산학살사건;사천 학살 사건;사천장터 시위;사천학살사건;삼일 운동;삼일독립운동;삼일운동;삼진 의거;삼진의거;합천학살사건;화수리 학살 사건;화수리학살사건</data>
       <data key="d2">3·1 운동;6·10 만세 운동;가네코 후미코;강우규;국민대표회의;권기옥;권동진;권병덕;김가진;김갑;김경 (1888년);김경천 (1888년);김구;김규식;김도연 (정치인);김동삼;김두봉;김마리아;김법린;김복한;김붕준;김상옥 (1889년);김성숙 (1898년);김세환 (1889년);김순애;김승학;김원봉;김인전;김지섭;김창숙;나창헌 (1896년);노백린;대한독립선언서;대한민국 임시정부;동제사;박동완;박열;박용만 (1881년);박은식;박찬익 (1884년);박헌영;방순희;방한민;봉오동 전투;삼둔자 전투;서재필;손병희;손정도;송진우 (1890년);신간회;신규식;신숙;신익희;신채호;신한청년당;심훈;안공근;안재홍;안중근;안창남;안창호;양전백;여운형;여운홍;오세창;유관순;유림 (1894년);유자명;윤기섭;윤봉길;윤치호;의열단;이갑성;이경희 (1880년);이동녕;이동휘;이범석;이봉창;이봉창 의거;이상룡 (1858년);이상설;이상재;이상화 (시인);이승만;이승훈 (1864년);이시영 (1868년);이유필;이종암;이종일 (1858년);이필주;이회영;임병직;자유시 참변;장건상;장덕수;장진홍;정재관;조동호;조만식;조병옥;조소앙;주기철;차리석;청산리 전투;한국 광복군;한용운;허정;허헌;홍진;흥사단</data>
       <data key="d3">110</data>
-      <data key="d4">49</data>
+      <data key="d4">52</data>
     </node>
     <node id="6.25 전쟁">
       <data key="d0">Event</data>
@@ -143,7 +143,7 @@
       <data key="d1">國民代表大會;國民代表會議;국민 대표 회의;국민대표대회;국민대표자 회의;국민대표자회의;국민대표회의</data>
       <data key="d2">국민대표회의;김갑;김경천 (1888년);김구;김규식;김동삼;김순애;김인전;노백린;대한민국 임시정부;박용만 (1881년);손정도;신숙;신채호;신한청년당;안창호;여운형;의열단;이동녕;이동휘;이승만;장건상;현정건;홍진</data>
       <data key="d3">24</data>
-      <data key="d4">15</data>
+      <data key="d4">16</data>
     </node>
     <node id="국민혁명군">
       <data key="d0">Organization</data>
@@ -248,7 +248,7 @@
       <data key="d1">金光瑞;金擎天;金敬天;金顯忠;김경천;김광서;김현충</data>
       <data key="d2">김경천;김경천 (1888년);김원봉;문창범;안중근;오광선;이범석;장지연;지청천</data>
       <data key="d3">9</data>
-      <data key="d4">0</data>
+      <data key="d4">2</data>
     </node>
     <node id="김교헌">
       <data key="d0">Person</data>
@@ -409,7 +409,7 @@
       <data key="d1">金淳愛;김순애</data>
       <data key="d2">3·1 운동;권기옥;김규식;김마리아;김순애;방순희;손정도;신한청년당</data>
       <data key="d3">8</data>
-      <data key="d4">0</data>
+      <data key="d4">1</data>
     </node>
     <node id="김승학">
       <data key="d0">Person</data>
@@ -1088,7 +1088,7 @@
       <data key="d1">海公;王海公;王邦平;申翼熙;신익희;신익히;여구 신익희;왕방평;왕해공;해공;해공 신익희</data>
       <data key="d2">3·1 운동;김구;김규식;김도연 (정치인);김두봉;김두한;김상옥 (1889년);김인전;노백린;대한민국 임시정부;박헌영;백의사;송진우 (1890년);신익희;안재홍;안창호;여운형;유림 (1894년);윤치호;이범석;이승만;이시영 (1868년);이회영;장건상;장덕수;장도빈;조병옥;조선민족혁명당;조소앙;지청천;한국독립당;허정;홍진</data>
       <data key="d3">33</data>
-      <data key="d4">5</data>
+      <data key="d4">6</data>
     </node>
     <node id="신채호">
       <data key="d0">Person</data>
@@ -1130,7 +1130,7 @@
       <data key="d1">新興武官學校;신흥강습소;신흥무관학교</data>
       <data key="d2">김경천 (1888년);김동삼;김원봉;김학규 (1900년);나석주;신민회;오광선;윤기섭;윤치호;이경희 (1880년);이동녕;이범석;이상룡 (1858년);이시영 (1868년);이회영;지청천;한국 광복군</data>
       <data key="d3">17</data>
-      <data key="d4">5</data>
+      <data key="d4">7</data>
     </node>
     <node id="쑹자오런">
       <data key="d0">Person</data>
@@ -1648,7 +1648,7 @@
       <data key="d1">李會榮;우당 이회영;이회영</data>
       <data key="d2">김경천 (1888년);김구;박용만 (1881년);신규식;신민회;신익희;신채호;심훈;안창호;유자명;이경희 (1880년);이동녕;이상룡 (1858년);이시영 (1868년);이회영;전덕기;한국 광복군;한용운</data>
       <data key="d3">18</data>
-      <data key="d4">2</data>
+      <data key="d4">3</data>
     </node>
     <node id="임병직">
       <data key="d0">Person</data>
@@ -1977,7 +1977,7 @@
       <data key="d1">李靑天;池大亨;池靑天;백산 이청천;백산 지대형;백산 지수봉;백산 지청천;이청천;지대형;지석규;지수봉;지을규;지청천</data>
       <data key="d2">김경천 (1888년);김구;김규식;김규식 (북로군정서);김두한;김붕준;대한독립군단;대한민국 임시정부;신숙;신익희;안창호;양기탁;오광선;유동열;유림 (1894년);윤기섭;이범석;이승만;이시영 (1868년);자유시 참변;장건상;장도빈;조병옥;조선민족혁명당;지청천;청산리 전투;한국 광복군;한국독립당</data>
       <data key="d3">28</data>
-      <data key="d4">4</data>
+      <data key="d4">5</data>
     </node>
     <node id="차리석">
       <data key="d0">Person</data>
@@ -2082,7 +2082,7 @@
       <data key="d1">베르사이유 회의;파리 강화 조약;파리 강화 회의;파리 강화조약;파리 강화회담;파리 강화회의;파리 평화 회의;파리강화 회의;파리강화조약;파리강화회담;파리강화회의;파리평화회의</data>
       <data key="d2">3·1 운동;권동진;김규식;김도연 (정치인);김복한;김순애;김원봉;김인전;노백린;대한민국 임시정부;동제사;박헌영;서재필;손정도;송진우 (1890년);신규식;신한청년당;안창호;양전백;여운형;여운홍;윤치호;이경희 (1880년);이승만;장건상;조동호;조소앙</data>
       <data key="d3">27</data>
-      <data key="d4">8</data>
+      <data key="d4">9</data>
     </node>
     <node id="하세가와 요시미치">
       <data key="d0">Person</data>
@@ -2424,13 +2424,29 @@
       <data key="d9">1919년 3·1독립운동 당시 경남지역의 연락책임자로 활약하다가 일경에게 쫓기어 중국 북경으로 망명하였다.</data>
       <data key="d10">rule_participated_v4_doc_entity</data>
     </edge>
+    <edge source="김경천" target="3·1 운동">
+      <data key="d5">PARTICIPATED_IN</data>
+      <data key="d6">llm</data>
+      <data key="d7">0.95</data>
+      <data key="d8">김경천 (1888년)</data>
+      <data key="d9">1919년에 3.1 만세 운동이 발발하자 김경천은 육사 삼 년 후배 이청천과 함께 만주 삼원포에 위치해 있는, 독립운동가 이회영, 이상룡이 독립군을 양성하기 위해 세워놓은 신흥무관학교에 갔다.;일본육사출신 김경천, 이청천이 그 무관학교의 교관으로 있다는 소식이 국내에 들어가자 3.1운동 이후 독립군이 되려던 학생들은 학업을 중단하고 삼원포로 갔다.</data>
+      <data key="d10">llm_extract_v1</data>
+    </edge>
+    <edge source="김경천" target="국민대표회의">
+      <data key="d5">PARTICIPATED_IN</data>
+      <data key="d6">llm</data>
+      <data key="d7">0.7</data>
+      <data key="d8">김경천 (1888년)</data>
+      <data key="d9">김경천은 상해 국민대표회의에 참석했다.</data>
+      <data key="d10">llm_extract_v1</data>
+    </edge>
     <edge source="김교헌" target="북로군정서">
       <data key="d5">FOUNDED</data>
-      <data key="d6">rule</data>
-      <data key="d7">0.8</data>
+      <data key="d6">rule+llm</data>
+      <data key="d7">0.95</data>
       <data key="d8">김교헌</data>
-      <data key="d9">1918년 12월에는 대종교인으로 북로군정서를 조직하여 1920년의 청산리 전투에 기여하였다.</data>
-      <data key="d10">rule_founded_v4_doc_person</data>
+      <data key="d9">1918년 12월에는 대종교인으로 북로군정서를 조직하여 1920년의 청산리 전투에 기여하였다.;이렇게 1916년 8월 4일, 대종교 2대 교주가 된 김교헌(金敎獻)은 총본사를 동간도 화룡(和龍)으로 옮긴 뒤 홍범규칙(弘範規則)을 공포하는 한편, 비밀결사단체인 중광단(重光團)을 조직하여 무장독립운동단체인 북로군정서(北路軍政署)로 발전시켰으며 1920년 청산리전투(靑山里戰鬪)에서는 큰 전과를 올렸다.</data>
+      <data key="d10">llm_extract_v1;rule_founded_v4_doc_person</data>
     </edge>
     <edge source="김구" target="대한독립촉성국민회">
       <data key="d5">FOUNDED</data>
@@ -2706,11 +2722,11 @@
     </edge>
     <edge source="김규식" target="파리 강화 회의">
       <data key="d5">PARTICIPATED_IN</data>
-      <data key="d6">rule</data>
-      <data key="d7">0.88</data>
-      <data key="d8">권동진;김규식;이승만</data>
+      <data key="d6">rule+llm</data>
+      <data key="d7">0.95</data>
+      <data key="d8">3·1 운동;권동진;김규식;이승만</data>
       <data key="d9">또한 그는 일본 제국주의의 무단정책과 조선인 차별 정책, 인종 차별을 비난하고 미국 대통령 우드로우 윌슨에게 보낼 편지와, 민족자결주의를 적극적으로 지지, 찬동하는 요지의 청원서, 그리고 프랑스 파리강화회의에 참가한 김규식 일행은 물론이고, 파리강화회의에 참가한 참가국 대표자들에게 제출할 의견서 초안을 검토하고 이에 찬동한다.;1919년 프랑스 파리강화회의에 참여하려 하였으나 프랑스 외무성으로부터 참여를 거절당하였다.;1919년 4월경 김규식은 상해 임시 정부 대표 명의로 된 국제 연맹 위임통치 청원서를 파리 강화회담에 제출하려고 했지만 프랑스 당국은 '정부가 아니면 참여할 수 없다'며 대한민국 대표단을 문전박대했다.</data>
-      <data key="d10">rule_participated_v1_active;rule_participated_v2_locative;rule_participated_v4_doc_entity</data>
+      <data key="d10">llm_extract_v1;rule_participated_v1_active;rule_participated_v2_locative;rule_participated_v4_doc_entity</data>
     </edge>
     <edge source="김달하" target="서북학회">
       <data key="d5">FOUNDED</data>
@@ -2983,6 +2999,14 @@
       <data key="d8">3·1 운동;김세환 (1889년)</data>
       <data key="d9">여기에 박인호, 김홍규, 노헌용, 이경섭(이상 천도교), 김도태, 안세환, 함태영, 김원벽, 김세환(이상 기독교), 임규, 송진우, 현상윤, 최남선, 강기덕, 정노식, 김지환, 한병익 등을 합쳐 민족대표 48인으로 보기도 한다.;1919년 3·1 운동에 민족대표 48인 중 한 사람으로 참가했다가 체포되어 복심에서 무죄 판결을 받았지만 미결수로 2년 가까이 복역하였다.</data>
       <data key="d10">rule_participated_v4_doc_entity;rule_participated_v5_doc_event_role</data>
+    </edge>
+    <edge source="김순애" target="파리 강화 회의">
+      <data key="d5">PARTICIPATED_IN</data>
+      <data key="d6">llm</data>
+      <data key="d7">0.7</data>
+      <data key="d8">3·1 운동</data>
+      <data key="d9">김순애 - 신한청년당 비밀연락원, 파리강화회의 파견 소식을 국내에 전달</data>
+      <data key="d10">llm_extract_v1</data>
     </edge>
     <edge source="김원벽" target="3·1 운동">
       <data key="d5">PARTICIPATED_IN</data>
@@ -3770,11 +3794,11 @@
     </edge>
     <edge source="북로군정서" target="청산리 전투">
       <data key="d5">PARTICIPATED_IN</data>
-      <data key="d6">rule</data>
-      <data key="d7">0.88</data>
-      <data key="d8">봉오동 전투;북로군정서;이범석;청산리 전투</data>
+      <data key="d6">rule+llm</data>
+      <data key="d7">0.95</data>
+      <data key="d8">김교헌;봉오동 전투;북로군정서;이범석;청산리 전투</data>
       <data key="d9">이후 일본군의 대대적인 탄압을 받게 된 북로독군부군은 청산리로 옮겨가 김좌진의 북로군정서군과 연합하여 청산리 전투를 전개해 나간다.;이때 밀린 홍범도의 부대는 김좌진, 이범석이 이끄는 북로군정서 본부와 연합하여 청산리 대첩에 참가한다.;봉오동, 청산리 전투에서 패배한 일제는 간도 참변을 일으켜 간도의 양민들을 무차별적으로 학살하였다.</data>
-      <data key="d10">rule_participated_v1_active;rule_participated_v3_doc_event;rule_participated_v4_doc_entity;rule_participated_v5_doc_event_role</data>
+      <data key="d10">llm_extract_v1;rule_participated_v1_active;rule_participated_v3_doc_event;rule_participated_v4_doc_entity;rule_participated_v5_doc_event_role</data>
     </edge>
     <edge source="블라디미르 레닌" target="국민대표회의">
       <data key="d5">PARTICIPATED_IN</data>
@@ -4088,6 +4112,14 @@
       <data key="d9">민족유일당 운동 때 그는 대한독립단(大韓獨立團)의 대표로 참석하였으며, 민족유일당의 창립에 합의하여 1935년 7월 5일에 민족혁명당을 결성하는데 참여하였다.</data>
       <data key="d10">rule_founded_v4_doc_person</data>
     </edge>
+    <edge source="신익희" target="2·8 독립 선언">
+      <data key="d5">PARTICIPATED_IN</data>
+      <data key="d6">llm</data>
+      <data key="d7">0.7</data>
+      <data key="d8">3·1 운동</data>
+      <data key="d9">신익희 - 윤치영, 이광수 등과 2.8 독립선언을 주도</data>
+      <data key="d10">llm_extract_v1</data>
+    </edge>
     <edge source="신익희" target="3·1 운동">
       <data key="d5">PARTICIPATED_IN</data>
       <data key="d6">rule</data>
@@ -4146,11 +4178,19 @@
     </edge>
     <edge source="신한청년당" target="파리 강화 회의">
       <data key="d5">PARTICIPATED_IN</data>
-      <data key="d6">rule</data>
-      <data key="d7">0.88</data>
-      <data key="d8">김순애</data>
-      <data key="d9">신한청년당이 파리강화회의에 참가하여 독립 청원서를 전달하는 임무를 김규식에게 맡기면서, 결혼한 지 보름만에 먼 길을 떠났다.</data>
-      <data key="d10">rule_participated_v1_active</data>
+      <data key="d6">rule+llm</data>
+      <data key="d7">0.95</data>
+      <data key="d8">3·1 운동;김순애</data>
+      <data key="d9">신한청년당이 파리강화회의에 참가하여 독립 청원서를 전달하는 임무를 김규식에게 맡기면서, 결혼한 지 보름만에 먼 길을 떠났다.;신한청년당 - 김규식을 파리강화회의에 파견</data>
+      <data key="d10">llm_extract_v1;rule_participated_v1_active</data>
+    </edge>
+    <edge source="신흥무관학교" target="3·1 운동">
+      <data key="d5">PARTICIPATED_IN</data>
+      <data key="d6">llm</data>
+      <data key="d7">0.7</data>
+      <data key="d8">김경천 (1888년)</data>
+      <data key="d9">1919년에 3.1 만세 운동이 발발하자 김경천은 육사 삼 년 후배 이청천과 함께 만주 삼원포에 위치해 있는, 독립운동가 이회영, 이상룡이 독립군을 양성하기 위해 세워놓은 신흥무관학교에 갔다.</data>
+      <data key="d10">llm_extract_v1</data>
     </edge>
     <edge source="신흥무관학교" target="청산리 전투">
       <data key="d5">PARTICIPATED_IN</data>
@@ -5170,11 +5210,11 @@
     </edge>
     <edge source="이동녕" target="한국독립당">
       <data key="d5">FOUNDED</data>
-      <data key="d6">rule</data>
-      <data key="d7">0.88</data>
-      <data key="d8">안창호</data>
-      <data key="d9">1928년 민족유일당운동에 동참하여 이동녕, 이시영, 김구 등과 상하이에서 한국독립당을 결성하는데 참여하였고, 대공주의를 제창하였다.</data>
-      <data key="d10">rule_founded_v1_active</data>
+      <data key="d6">rule+llm</data>
+      <data key="d7">0.95</data>
+      <data key="d8">김구;안창호</data>
+      <data key="d9">1928년 민족유일당운동에 동참하여 이동녕, 이시영, 김구 등과 상하이에서 한국독립당을 결성하는데 참여하였고, 대공주의를 제창하였다.;1930년 1월 상하이 불조계에서 이시영(李始榮), 이동녕 등과 함께 한국독립당(韓國獨立黨)을 조직, 당무이사에 선출되었다.</data>
+      <data key="d10">llm_extract_v1;rule_founded_v1_active</data>
     </edge>
     <edge source="이동녕" target="3·1 운동">
       <data key="d5">PARTICIPATED_IN</data>
@@ -5282,11 +5322,11 @@
     </edge>
     <edge source="이상룡" target="신흥무관학교">
       <data key="d5">FOUNDED</data>
-      <data key="d6">rule</data>
-      <data key="d7">0.88</data>
-      <data key="d8">김동삼</data>
-      <data key="d9">이시영, 이동녕, 이상룡, 윤기섭 등과 함께 간도 지방에 경학사와 신흥강습소를 설립하는 데 참가했다.</data>
-      <data key="d10">rule_founded_v1_active</data>
+      <data key="d6">rule+llm</data>
+      <data key="d7">0.95</data>
+      <data key="d8">김경천 (1888년);김동삼</data>
+      <data key="d9">이시영, 이동녕, 이상룡, 윤기섭 등과 함께 간도 지방에 경학사와 신흥강습소를 설립하는 데 참가했다.;1919년에 3.1 만세 운동이 발발하자 김경천은 육사 삼 년 후배 이청천과 함께 만주 삼원포에 위치해 있는, 독립운동가 이회영, 이상룡이 독립군을 양성하기 위해 세워놓은 신흥무관학교에 갔다.</data>
+      <data key="d10">llm_extract_v1;rule_founded_v1_active</data>
     </edge>
     <edge source="이상설" target="신민회">
       <data key="d5">FOUNDED</data>
@@ -5490,11 +5530,11 @@
     </edge>
     <edge source="이시영" target="한국독립당">
       <data key="d5">FOUNDED</data>
-      <data key="d6">rule</data>
-      <data key="d7">0.88</data>
-      <data key="d8">안창호</data>
-      <data key="d9">1928년 민족유일당운동에 동참하여 이동녕, 이시영, 김구 등과 상하이에서 한국독립당을 결성하는데 참여하였고, 대공주의를 제창하였다.</data>
-      <data key="d10">rule_founded_v1_active</data>
+      <data key="d6">rule+llm</data>
+      <data key="d7">0.95</data>
+      <data key="d8">김구;안창호</data>
+      <data key="d9">1928년 민족유일당운동에 동참하여 이동녕, 이시영, 김구 등과 상하이에서 한국독립당을 결성하는데 참여하였고, 대공주의를 제창하였다.;1930년 1월 상하이 불조계에서 이시영(李始榮), 이동녕 등과 함께 한국독립당(韓國獨立黨)을 조직, 당무이사에 선출되었다.</data>
+      <data key="d10">llm_extract_v1;rule_founded_v1_active</data>
     </edge>
     <edge source="이시영" target="을사조약">
       <data key="d5">PARTICIPATED_IN</data>
@@ -5631,6 +5671,14 @@
       <data key="d8">이경희 (1880년);이회영;전덕기</data>
       <data key="d9">1910년(융희 4) 10월 한일합방 조약이 체결되자 경성으로 올라가 청년학우회 한성지회의 일원으로 이동녕(李東寧), 윤치호, 안창호, 윤치소, 이회영(李會榮), 윤기섭(尹琦燮), 이승훈, 김좌진(金佐鎭), 김구 등과 함께 신민회(新民會)를 결성하고 회원이 되었다.;공옥학교의 학감으로 있을 때 신민회를 조직하였다;그러나 일제는 신민회를 탄압했고, 신민회 회원들을 일망타진할 계획을 세웠다.</data>
       <data key="d10">rule_founded_v1_active;rule_founded_v4_doc_person</data>
+    </edge>
+    <edge source="이회영" target="신흥무관학교">
+      <data key="d5">FOUNDED</data>
+      <data key="d6">llm</data>
+      <data key="d7">0.7</data>
+      <data key="d8">김경천 (1888년)</data>
+      <data key="d9">1919년에 3.1 만세 운동이 발발하자 김경천은 육사 삼 년 후배 이청천과 함께 만주 삼원포에 위치해 있는, 독립운동가 이회영, 이상룡이 독립군을 양성하기 위해 세워놓은 신흥무관학교에 갔다.</data>
+      <data key="d10">llm_extract_v1</data>
     </edge>
     <edge source="장건상" target="3·1 운동">
       <data key="d5">PARTICIPATED_IN</data>
@@ -5951,6 +5999,14 @@
       <data key="d8">신숙</data>
       <data key="d9">1930년 북만주에서 홍진(洪震)·이청천(李靑天) 등과 한국독립당을 조직하고 동당 총무위원장·문화부장 등으로 활약하였고, 1931년 동북사변이 일어나자 한국독립군의 참모장으로 쌍성현 공략에 참전하기도 하였다.</data>
       <data key="d10">rule_founded_v1_active</data>
+    </edge>
+    <edge source="지청천" target="3·1 운동">
+      <data key="d5">PARTICIPATED_IN</data>
+      <data key="d6">llm</data>
+      <data key="d7">0.7</data>
+      <data key="d8">김경천 (1888년)</data>
+      <data key="d9">일본육사출신 김경천, 이청천이 그 무관학교의 교관으로 있다는 소식이 국내에 들어가자 3.1운동 이후 독립군이 되려던 학생들은 학업을 중단하고 삼원포로 갔다.</data>
+      <data key="d10">llm_extract_v1</data>
     </edge>
     <edge source="지청천" target="자유시 참변">
       <data key="d5">PARTICIPATED_IN</data>

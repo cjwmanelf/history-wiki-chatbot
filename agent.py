@@ -100,6 +100,8 @@ class AgentState(TypedDict):
     refused: bool
     path_explanation: str
     sources: list[str]
+    llm_used: bool
+    llm_fallback_reason: str | None
 
 
 # ---------------------------------------------------------------------------
@@ -645,48 +647,15 @@ class GraphRAGAgent:
             )
         source_block = "\n".join(source_lines) if source_lines else "- (출처 정보 없음)"
 
-        # 1. LLM 답변 합성 시도 (키 활성화 시)
-        if llm.is_enabled():
-            triples_text = "\n".join(
-                f"- ({t['head']}, {t['relation']}, {t['tail']}) | 출처: {', '.join(t.get('sources', []))}"
-                for t in triples[:30]
-            )
-            candidate_chains_text = "\n".join(
-                f"- {c['target']} (경로: {' '.join(s['from_node'] + (' -[' + s['relation'] + ']-> ' if s['direction'] == 'forward' else ' <-[' + s['relation'] + ']- ') + s['to_node'] for s in c['path'])}, 점수: {c['score']:.4f})"
-                for c in sorted_candidates[:5]
-            )
-            system_prompt = (
-                "You are 'History Wiki GraphRAG Assistant', an AI expert specializing in Knowledge Graph-based "
-                "Retrieval-Augmented Generation for Korean Independence Movement history.\n"
-                "Your job is to answer user queries strictly using the provided Knowledge Graph triples and candidate paths, "
-                "while maintaining complete transparency and path explainability.\n\n"
-                "Instructions:\n"
-                "1. Base every claim strictly on the provided triples. If not found, use exact refusal text.\n"
-                "2. Format your response STRICTLY with these 3 sections in Korean:\n"
-                "[답변 요약]\n<간결하고 정확한 핵심 답변 — 멀티홉인 경우 상위 후보와 근거 사슬(A -[rel]-> B <-[rel]- C)을 짝지어 제시>\n\n"
-                "[탐색 및 추론 경로]\n<단계별 지식 그래프 이동 경로 (역방향 표기 포함)>\n\n"
-                "[근거 출처]\n<삼중항별 출처 문서 및 신뢰도>"
-            )
-            user_prompt = (
-                f"질문: {q}\n\n"
-                f"도출된 유력 후보 경로:\n{candidate_chains_text}\n\n"
-                f"수집된 지식 그래프 삼중항:\n{triples_text}"
-            )
-            synth_model = self.config.get("llm", {}).get("synth_model", "gpt-4.1-mini")
-            llm_answer = llm.chat(
-                [{"role": "system", "content": system_prompt}, {"role": "user", "content": user_prompt}],
-                model=synth_model,
-                max_tokens=self.config.get("llm", {}).get("max_output_tokens", 1500),
-            )
-            if llm_answer and "[답변 요약]" in llm_answer:
-                return {
-                    "answer": llm_answer.strip(),
-                    "refused": False,
-                    "traversed_path": traversed_path,
-                    "path_explanation": path_explanation,
-                }
-
-        # 2. 결정론적 규칙 답변 합성 (오프라인 모드)
+        # 결정론적 규칙 답변 합성 (키 유무와 무관하게 항상 먼저 만든다)
+        #
+        # LLM 은 이 결정론적 요약의 '문장을 다듬는 역할'만 한다. 예전에는 LLM 에게
+        # 후보 경로 5개와 삼중항 30개를 통째로 주고 3블록 전체를 쓰게 했는데,
+        # 그러면 코드가 고른 traversed_path 와 LLM 이 고른 경로가 갈려
+        # "경로는 청산리 전투인데 답변 산문은 봉오동 전투" 같은 불일치가 실제로 발생했다.
+        # 루브릭이 요구하는 '탄 경로를 답변과 함께 제시'를 어기는 상태였다.
+        # 그래서 경로 블록과 출처 블록은 코드가 소유하고, LLM 출력은 개체 검증 후
+        # 어긋나면 결정론적 문장으로 폴백한다.
         seed_str = ", ".join(s["node"] for s in seeds)
         top_candidates = sorted_candidates[:5]
         is_co = state.get("is_co_participant", False)
@@ -732,6 +701,60 @@ class GraphRAGAgent:
                 + "\n".join(cand_lines)
             )
 
+        # LLM 문장 다듬기 (선택). 개체를 바꾸면 버리고 결정론적 문장으로 돌아간다.
+        llm_used = False
+        llm_fallback_reason = None
+        if llm.is_enabled():
+            allowed_entities = {s["node"] for s in seeds}
+            for c in top_candidates:
+                allowed_entities.add(c["target"])
+                for st in c["path"]:
+                    allowed_entities.add(st["from_node"])
+                    allowed_entities.add(st["to_node"])
+
+            system_prompt = (
+                "당신은 한국 독립운동사 지식 그래프 QA 어시스턴트의 '문장 다듬기' 모듈이다.\n"
+                "입력으로 받은 [확정 답변]은 지식 그래프 탐색으로 이미 확정된 사실이다.\n"
+                "규칙:\n"
+                "1. 개체 이름(인물·사건·조직)을 추가·삭제·변경하지 마라. 주어진 것만 그대로 쓴다.\n"
+                "2. 새로운 사실을 추론하거나 배경 지식을 덧붙이지 마라.\n"
+                "3. 후보와 근거 사슬의 짝은 그대로 유지하되, 한국어 문장을 자연스럽게 다듬어라.\n"
+                "4. 머리말·꼬리말·마크다운 제목 없이 다듬은 본문만 출력하라."
+            )
+            user_prompt = f"질문: {q}\n\n[확정 답변]\n{summary_text}"
+            synth_model = self.config.get("llm", {}).get("synth_model", "gpt-4.1-mini")
+            polished = llm.chat(
+                [{"role": "system", "content": system_prompt},
+                 {"role": "user", "content": user_prompt}],
+                model=synth_model,
+                max_tokens=self.config.get("llm", {}).get("max_output_tokens", 1500),
+            )
+
+            if not polished:
+                llm_fallback_reason = "llm_unavailable"
+            else:
+                # 검증 1: 허용되지 않은 그래프 개체를 끌어들였는가
+                #
+                # 부분문자열 오탐을 막는다. 예: 허용된 '대한독립군단' 안에는 다른 노드 '대한독립군'이
+                # 들어 있어, 단순 포함 검사만 하면 정상 답변이 매번 침입자로 잡힌다.
+                # 그래서 허용 개체를 먼저 긴 이름부터 가린 뒤 남은 텍스트에서만 검사한다.
+                masked = polished
+                for ent in sorted(allowed_entities, key=len, reverse=True):
+                    masked = masked.replace(ent, "\x00")
+                intruders = [
+                    nid for nid in self.nodes_by_id
+                    if len(nid) >= 2 and nid not in allowed_entities and nid in masked
+                ]
+                # 검증 2: 1순위 정답이 그대로 남아 있는가
+                missing_primary = top_candidates and top_candidates[0]["target"] not in polished
+                if intruders:
+                    llm_fallback_reason = f"entity_drift: {', '.join(intruders[:5])}"
+                elif missing_primary:
+                    llm_fallback_reason = "primary_target_missing"
+                else:
+                    summary_text = polished.strip()
+                    llm_used = True
+
         full_answer = (
             f"[답변 요약]\n{summary_text}\n\n"
             f"[탐색 및 추론 경로]\n{path_block}\n\n"
@@ -743,6 +766,8 @@ class GraphRAGAgent:
             "refused": False,
             "traversed_path": traversed_path,
             "path_explanation": path_explanation,
+            "llm_used": llm_used,
+            "llm_fallback_reason": llm_fallback_reason,
         }
 
     # -----------------------------------------------------------------------
@@ -821,6 +846,8 @@ class GraphRAGAgent:
             "refused": False,
             "path_explanation": "",
             "sources": [],
+            "llm_used": False,
+            "llm_fallback_reason": None,
         }
 
         final_state = self.workflow.invoke(initial_state)
@@ -841,6 +868,9 @@ class GraphRAGAgent:
             "refused": final_state["refused"],
             "path_explanation": final_state["path_explanation"],
             "sources": final_state["sources"],
+            # 답변 문장을 LLM 이 다듬었는지, 개체 검증에 걸려 규칙 문장으로 되돌렸는지 기록한다.
+            "llm_used": final_state.get("llm_used", False),
+            "llm_fallback_reason": final_state.get("llm_fallback_reason"),
             "latency_ms": latency_ms,
         }
 

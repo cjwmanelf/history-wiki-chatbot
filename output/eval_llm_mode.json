@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-09-21T12:36:00.262347+00:00",
+  "run_at": "2026-09-21T12:35:31.238222+00:00",
   "graph_source": "graph.json",
   "goldenset_source": "goldenset.json",
   "corpus_docs": 177,
@@ -18,7 +18,7 @@
         "refusal_ok": null
       },
       "basic_rag": {
-        "answer_acc": 0.5
+        "answer_acc": 0.6
       }
     },
     "2": {
@@ -29,7 +29,7 @@
         "refusal_ok": null
       },
       "basic_rag": {
-        "answer_acc": 0.6
+        "answer_acc": 0.4
       }
     },
     "3": {
@@ -51,7 +51,7 @@
   },
   "overall": {
     "graphrag_answer_acc": 1.0,
-    "basic_rag_answer_acc": 0.545
+    "basic_rag_answer_acc": 0.5
   },
   "failures": [],
   "failure_layer_counts": {

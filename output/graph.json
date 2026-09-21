@@ -75,7 +75,7 @@
         "조소앙"
       ],
       "doc_count": 16,
-      "degree": 3
+      "degree": 4
     },
     {
       "id": "3·1 운동",
@@ -246,7 +246,7 @@
         "흥사단"
       ],
       "doc_count": 110,
-      "degree": 49
+      "degree": 52
     },
     {
       "id": "6.25 전쟁",
@@ -745,7 +745,7 @@
         "홍진"
       ],
       "doc_count": 24,
-      "degree": 15
+      "degree": 16
     },
     {
       "id": "국민혁명군",
@@ -1079,7 +1079,7 @@
         "지청천"
       ],
       "doc_count": 9,
-      "degree": 0
+      "degree": 2
     },
     {
       "id": "김교헌",
@@ -1747,7 +1747,7 @@
         "신한청년당"
       ],
       "doc_count": 8,
-      "degree": 0
+      "degree": 1
     },
     {
       "id": "김승학",
@@ -4422,7 +4422,7 @@
         "홍진"
       ],
       "doc_count": 33,
-      "degree": 5
+      "degree": 6
     },
     {
       "id": "신채호",
@@ -4626,7 +4626,7 @@
         "한국 광복군"
       ],
       "doc_count": 17,
-      "degree": 5
+      "degree": 7
     },
     {
       "id": "쑹자오런",
@@ -6864,7 +6864,7 @@
         "한용운"
       ],
       "doc_count": 18,
-      "degree": 2
+      "degree": 3
     },
     {
       "id": "임병직",
@@ -8193,7 +8193,7 @@
         "한국독립당"
       ],
       "doc_count": 28,
-      "degree": 4
+      "degree": 5
     },
     {
       "id": "차리석",
@@ -8561,7 +8561,7 @@
         "조소앙"
       ],
       "doc_count": 27,
-      "degree": 8
+      "degree": 9
     },
     {
       "id": "하세가와 요시미치",
@@ -9560,18 +9560,48 @@
       "extractor": "rule_participated_v4_doc_entity"
     },
     {
+      "head": "김경천",
+      "relation": "PARTICIPATED_IN",
+      "tail": "3·1 운동",
+      "origin": "llm",
+      "confidence": 0.95,
+      "sources": [
+        "김경천 (1888년)"
+      ],
+      "evidence": [
+        "1919년에 3.1 만세 운동이 발발하자 김경천은 육사 삼 년 후배 이청천과 함께 만주 삼원포에 위치해 있는, 독립운동가 이회영, 이상룡이 독립군을 양성하기 위해 세워놓은 신흥무관학교에 갔다.",
+        "일본육사출신 김경천, 이청천이 그 무관학교의 교관으로 있다는 소식이 국내에 들어가자 3.1운동 이후 독립군이 되려던 학생들은 학업을 중단하고 삼원포로 갔다."
+      ],
+      "extractor": "llm_extract_v1"
+    },
+    {
+      "head": "김경천",
+      "relation": "PARTICIPATED_IN",
+      "tail": "국민대표회의",
+      "origin": "llm",
+      "confidence": 0.7,
+      "sources": [
+        "김경천 (1888년)"
+      ],
+      "evidence": [
+        "김경천은 상해 국민대표회의에 참석했다."
+      ],
+      "extractor": "llm_extract_v1"
+    },
+    {
       "head": "김교헌",
       "relation": "FOUNDED",
       "tail": "북로군정서",
-      "origin": "rule",
-      "confidence": 0.8,
+      "origin": "rule+llm",
+      "confidence": 0.95,
       "sources": [
         "김교헌"
       ],
       "evidence": [
-        "1918년 12월에는 대종교인으로 북로군정서를 조직하여 1920년의 청산리 전투에 기여하였다."
+        "1918년 12월에는 대종교인으로 북로군정서를 조직하여 1920년의 청산리 전투에 기여하였다.",
+        "이렇게 1916년 8월 4일, 대종교 2대 교주가 된 김교헌(金敎獻)은 총본사를 동간도 화룡(和龍)으로 옮긴 뒤 홍범규칙(弘範規則)을 공포하는 한편, 비밀결사단체인 중광단(重光團)을 조직하여 무장독립운동단체인 북로군정서(北路軍政署)로 발전시켰으며 1920년 청산리전투(靑山里戰鬪)에서는 큰 전과를 올렸다."
       ],
-      "extractor": "rule_founded_v4_doc_person"
+      "extractor": "llm_extract_v1;rule_founded_v4_doc_person"
     },
     {
       "head": "김구",
@@ -10141,9 +10171,10 @@
       "head": "김규식",
       "relation": "PARTICIPATED_IN",
       "tail": "파리 강화 회의",
-      "origin": "rule",
-      "confidence": 0.88,
+      "origin": "rule+llm",
+      "confidence": 0.95,
       "sources": [
+        "3·1 운동",
         "권동진",
         "김규식",
         "이승만"
@@ -10153,7 +10184,7 @@
         "1919년 프랑스 파리강화회의에 참여하려 하였으나 프랑스 외무성으로부터 참여를 거절당하였다.",
         "1919년 4월경 김규식은 상해 임시 정부 대표 명의로 된 국제 연맹 위임통치 청원서를 파리 강화회담에 제출하려고 했지만 프랑스 당국은 '정부가 아니면 참여할 수 없다'며 대한민국 대표단을 문전박대했다."
       ],
-      "extractor": "rule_participated_v1_active;rule_participated_v2_locative;rule_participated_v4_doc_entity"
+      "extractor": "llm_extract_v1;rule_participated_v1_active;rule_participated_v2_locative;rule_participated_v4_doc_entity"
     },
     {
       "head": "김달하",
@@ -10649,6 +10680,20 @@
         "1919년 3·1 운동에 민족대표 48인 중 한 사람으로 참가했다가 체포되어 복심에서 무죄 판결을 받았지만 미결수로 2년 가까이 복역하였다."
       ],
       "extractor": "rule_participated_v4_doc_entity;rule_participated_v5_doc_event_role"
+    },
+    {
+      "head": "김순애",
+      "relation": "PARTICIPATED_IN",
+      "tail": "파리 강화 회의",
+      "origin": "llm",
+      "confidence": 0.7,
+      "sources": [
+        "3·1 운동"
+      ],
+      "evidence": [
+        "김순애 - 신한청년당 비밀연락원, 파리강화회의 파견 소식을 국내에 전달"
+      ],
+      "extractor": "llm_extract_v1"
     },
     {
       "head": "김원벽",
@@ -12094,9 +12139,10 @@
       "head": "북로군정서",
       "relation": "PARTICIPATED_IN",
       "tail": "청산리 전투",
-      "origin": "rule",
-      "confidence": 0.88,
+      "origin": "rule+llm",
+      "confidence": 0.95,
       "sources": [
+        "김교헌",
         "봉오동 전투",
         "북로군정서",
         "이범석",
@@ -12107,7 +12153,7 @@
         "이때 밀린 홍범도의 부대는 김좌진, 이범석이 이끄는 북로군정서 본부와 연합하여 청산리 대첩에 참가한다.",
         "봉오동, 청산리 전투에서 패배한 일제는 간도 참변을 일으켜 간도의 양민들을 무차별적으로 학살하였다."
       ],
-      "extractor": "rule_participated_v1_active;rule_participated_v3_doc_event;rule_participated_v4_doc_entity;rule_participated_v5_doc_event_role"
+      "extractor": "llm_extract_v1;rule_participated_v1_active;rule_participated_v3_doc_event;rule_participated_v4_doc_entity;rule_participated_v5_doc_event_role"
     },
     {
       "head": "블라디미르 레닌",
@@ -12701,6 +12747,20 @@
     {
       "head": "신익희",
       "relation": "PARTICIPATED_IN",
+      "tail": "2·8 독립 선언",
+      "origin": "llm",
+      "confidence": 0.7,
+      "sources": [
+        "3·1 운동"
+      ],
+      "evidence": [
+        "신익희 - 윤치영, 이광수 등과 2.8 독립선언을 주도"
+      ],
+      "extractor": "llm_extract_v1"
+    },
+    {
+      "head": "신익희",
+      "relation": "PARTICIPATED_IN",
       "tail": "3·1 운동",
       "origin": "rule",
       "confidence": 0.8,
@@ -12807,15 +12867,31 @@
       "head": "신한청년당",
       "relation": "PARTICIPATED_IN",
       "tail": "파리 강화 회의",
-      "origin": "rule",
-      "confidence": 0.88,
+      "origin": "rule+llm",
+      "confidence": 0.95,
       "sources": [
+        "3·1 운동",
         "김순애"
       ],
       "evidence": [
-        "신한청년당이 파리강화회의에 참가하여 독립 청원서를 전달하는 임무를 김규식에게 맡기면서, 결혼한 지 보름만에 먼 길을 떠났다."
+        "신한청년당이 파리강화회의에 참가하여 독립 청원서를 전달하는 임무를 김규식에게 맡기면서, 결혼한 지 보름만에 먼 길을 떠났다.",
+        "신한청년당 - 김규식을 파리강화회의에 파견"
       ],
-      "extractor": "rule_participated_v1_active"
+      "extractor": "llm_extract_v1;rule_participated_v1_active"
+    },
+    {
+      "head": "신흥무관학교",
+      "relation": "PARTICIPATED_IN",
+      "tail": "3·1 운동",
+      "origin": "llm",
+      "confidence": 0.7,
+      "sources": [
+        "김경천 (1888년)"
+      ],
+      "evidence": [
+        "1919년에 3.1 만세 운동이 발발하자 김경천은 육사 삼 년 후배 이청천과 함께 만주 삼원포에 위치해 있는, 독립운동가 이회영, 이상룡이 독립군을 양성하기 위해 세워놓은 신흥무관학교에 갔다."
+      ],
+      "extractor": "llm_extract_v1"
     },
     {
       "head": "신흥무관학교",
@@ -14738,15 +14814,17 @@
       "head": "이동녕",
       "relation": "FOUNDED",
       "tail": "한국독립당",
-      "origin": "rule",
-      "confidence": 0.88,
+      "origin": "rule+llm",
+      "confidence": 0.95,
       "sources": [
+        "김구",
         "안창호"
       ],
       "evidence": [
-        "1928년 민족유일당운동에 동참하여 이동녕, 이시영, 김구 등과 상하이에서 한국독립당을 결성하는데 참여하였고, 대공주의를 제창하였다."
+        "1928년 민족유일당운동에 동참하여 이동녕, 이시영, 김구 등과 상하이에서 한국독립당을 결성하는데 참여하였고, 대공주의를 제창하였다.",
+        "1930년 1월 상하이 불조계에서 이시영(李始榮), 이동녕 등과 함께 한국독립당(韓國獨立黨)을 조직, 당무이사에 선출되었다."
       ],
-      "extractor": "rule_founded_v1_active"
+      "extractor": "llm_extract_v1;rule_founded_v1_active"
     },
     {
       "head": "이동녕",
@@ -14949,15 +15027,17 @@
       "head": "이상룡",
       "relation": "FOUNDED",
       "tail": "신흥무관학교",
-      "origin": "rule",
-      "confidence": 0.88,
+      "origin": "rule+llm",
+      "confidence": 0.95,
       "sources": [
+        "김경천 (1888년)",
         "김동삼"
       ],
       "evidence": [
-        "이시영, 이동녕, 이상룡, 윤기섭 등과 함께 간도 지방에 경학사와 신흥강습소를 설립하는 데 참가했다."
+        "이시영, 이동녕, 이상룡, 윤기섭 등과 함께 간도 지방에 경학사와 신흥강습소를 설립하는 데 참가했다.",
+        "1919년에 3.1 만세 운동이 발발하자 김경천은 육사 삼 년 후배 이청천과 함께 만주 삼원포에 위치해 있는, 독립운동가 이회영, 이상룡이 독립군을 양성하기 위해 세워놓은 신흥무관학교에 갔다."
       ],
-      "extractor": "rule_founded_v1_active"
+      "extractor": "llm_extract_v1;rule_founded_v1_active"
     },
     {
       "head": "이상설",
@@ -15339,15 +15419,17 @@
       "head": "이시영",
       "relation": "FOUNDED",
       "tail": "한국독립당",
-      "origin": "rule",
-      "confidence": 0.88,
+      "origin": "rule+llm",
+      "confidence": 0.95,
       "sources": [
+        "김구",
         "안창호"
       ],
       "evidence": [
-        "1928년 민족유일당운동에 동참하여 이동녕, 이시영, 김구 등과 상하이에서 한국독립당을 결성하는데 참여하였고, 대공주의를 제창하였다."
+        "1928년 민족유일당운동에 동참하여 이동녕, 이시영, 김구 등과 상하이에서 한국독립당을 결성하는데 참여하였고, 대공주의를 제창하였다.",
+        "1930년 1월 상하이 불조계에서 이시영(李始榮), 이동녕 등과 함께 한국독립당(韓國獨立黨)을 조직, 당무이사에 선출되었다."
       ],
-      "extractor": "rule_founded_v1_active"
+      "extractor": "llm_extract_v1;rule_founded_v1_active"
     },
     {
       "head": "이시영",
@@ -15600,6 +15682,20 @@
         "그러나 일제는 신민회를 탄압했고, 신민회 회원들을 일망타진할 계획을 세웠다."
       ],
       "extractor": "rule_founded_v1_active;rule_founded_v4_doc_person"
+    },
+    {
+      "head": "이회영",
+      "relation": "FOUNDED",
+      "tail": "신흥무관학교",
+      "origin": "llm",
+      "confidence": 0.7,
+      "sources": [
+        "김경천 (1888년)"
+      ],
+      "evidence": [
+        "1919년에 3.1 만세 운동이 발발하자 김경천은 육사 삼 년 후배 이청천과 함께 만주 삼원포에 위치해 있는, 독립운동가 이회영, 이상룡이 독립군을 양성하기 위해 세워놓은 신흥무관학교에 갔다."
+      ],
+      "extractor": "llm_extract_v1"
     },
     {
       "head": "장건상",
@@ -16200,6 +16296,20 @@
         "1930년 북만주에서 홍진(洪震)·이청천(李靑天) 등과 한국독립당을 조직하고 동당 총무위원장·문화부장 등으로 활약하였고, 1931년 동북사변이 일어나자 한국독립군의 참모장으로 쌍성현 공략에 참전하기도 하였다."
       ],
       "extractor": "rule_founded_v1_active"
+    },
+    {
+      "head": "지청천",
+      "relation": "PARTICIPATED_IN",
+      "tail": "3·1 운동",
+      "origin": "llm",
+      "confidence": 0.7,
+      "sources": [
+        "김경천 (1888년)"
+      ],
+      "evidence": [
+        "일본육사출신 김경천, 이청천이 그 무관학교의 교관으로 있다는 소식이 국내에 들어가자 3.1운동 이후 독립군이 되려던 학생들은 학업을 중단하고 삼원포로 갔다."
+      ],
+      "extractor": "llm_extract_v1"
     },
     {
       "head": "지청천",
@@ -18507,18 +18617,20 @@
   },
   "stats": {
     "nodes": 316,
-    "edges": 506,
+    "edges": 513,
     "by_type": {
       "Event": 34,
       "Organization": 70,
       "Person": 212
     },
     "by_relation": {
-      "FOUNDED": 239,
-      "PARTICIPATED_IN": 267
+      "FOUNDED": 240,
+      "PARTICIPATED_IN": 273
     },
     "by_origin": {
-      "rule": 506
+      "llm": 7,
+      "rule": 499,
+      "rule+llm": 7
     }
   }
 }

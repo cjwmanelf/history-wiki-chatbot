@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-09-21T02:14:31Z",
+  "built_at": "2026-09-21T12:35:16Z",
   "corpus": {
     "docs": 177,
     "sentences": 30746,
@@ -3731,6 +3731,7 @@
     "회장"
   ],
   "extractors": {
+    "llm_extract_v1": 15,
     "rule_cat_participated_v6": 29,
     "rule_founded_v1_active": 326,
     "rule_founded_v2_passive": 12,
@@ -3744,15 +3745,18 @@
     "rule_participated_v5_doc_event_role": 162
   },
   "llm_augmentation": {
-    "enabled": false,
-    "note": "키가 없어 건너뜀. 규칙 기반 결과만으로 그래프를 완성했다.",
-    "residual_sentences": 3188
+    "batches": 15,
+    "proposed": 20,
+    "accepted": 15,
+    "rejected": 5,
+    "enabled": true,
+    "note": "규칙이 아무 엣지도 못 만든 문장 3188개 중 150개를 증강 대상으로 사용"
   },
   "llm_key_status": {
-    "available": false,
-    "source": null,
-    "masked": "(없음)",
-    "mode": "규칙 전용 모드 (오프라인)"
+    "available": true,
+    "source": "dotenv",
+    "masked": "sk-********1hIA",
+    "mode": "LLM 증강 모드"
   },
   "rejected_edges": [
     {
@@ -6156,7 +6160,7 @@
       "reason": "schema_type_mismatch: (Event, PARTICIPATED_IN, Organization) 는 허용 튜플이 아님 [허용: (Organization, PARTICIPATED_IN, Event), (Person, FOUNDED, Organization), (Person, PARTICIPATED_IN, Event)]"
     }
   ],
-  "rejected_edges_total": 500,
+  "rejected_edges_total": 503,
   "not_extracted_relations": [
     {
       "relation": "MEMBER_OF",
@@ -6710,18 +6714,20 @@
   },
   "stats": {
     "nodes": 316,
-    "edges": 506,
+    "edges": 513,
     "by_type": {
       "Event": 34,
       "Organization": 70,
       "Person": 212
     },
     "by_relation": {
-      "FOUNDED": 239,
-      "PARTICIPATED_IN": 267
+      "FOUNDED": 240,
+      "PARTICIPATED_IN": 273
     },
     "by_origin": {
-      "rule": 506
+      "llm": 7,
+      "rule": 499,
+      "rule+llm": 7
     }
   }
 }

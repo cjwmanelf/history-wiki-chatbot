@@ -1,0 +1,89 @@
+{
+  "_note": "코디네이터가 실제로 측정한 평가 실행 이력. 최종 eval.json 은 실패 0건이지만, 그 상태에 도달하기까지 실제로 관측된 실패와 그 층 분류·진단·수정을 남긴다. 과제 요구('실패 사례를 직접 읽어 색인·탐색·생성 중 어디서 깨졌는지 구분해 기록')에 대응하는 1차 자료다.",
+  "scoring_criteria_fixed_before_measurement": true,
+  "runs": [
+    {
+      "seq": 1,
+      "when": "픽스처 골든셋 + 픽스처 그래프",
+      "goldenset_source": "fixture_goldenset.json",
+      "graph_source": "fixture_graph.json",
+      "by_hop": {
+        "1": {"graphrag": 1.0, "basic_rag": 0.0},
+        "2": {"graphrag": 1.0, "basic_rag": 0.0},
+        "3": {"graphrag": 0.0, "basic_rag": 0.0}
+      },
+      "failure_layer_counts": {"index": 0, "retrieval": 1, "generation": 0},
+      "observed_problem": "BasicRAG 가 전 구간 0.000. 대조군이 망가진 상태의 비교라 무의미했다.",
+      "root_cause": "평가 시점에 data/docs 가 비어 있어 대조군에 코퍼스가 없었다.",
+      "fix": "코퍼스 수집을 완료하고 basic_rag 의 한국어 토크나이징을 문자 n-gram(char_wb)으로 교체."
+    },
+    {
+      "seq": 2,
+      "when": "픽스처 골든셋 + 실물 그래프",
+      "goldenset_source": "fixture_goldenset.json",
+      "graph_source": "graph.json",
+      "by_hop": {
+        "1": {"graphrag": 0.625, "basic_rag": 0.625},
+        "2": {"graphrag": 0.3, "basic_rag": 0.3},
+        "3": {"graphrag": 0.0, "basic_rag": 0.5}
+      },
+      "failure_layer_counts": {"index": 8, "retrieval": 0, "generation": 1},
+      "observed_problem": "색인 실패 8건. GraphRAG(0.400)가 BasicRAG(0.450)보다 낮았다.",
+      "root_cause": "골든셋과 그래프의 출처가 달랐다. 픽스처 골든셋이 기대한 삼중항(안중근·우덕순·대한국민회 등)은 실물 그래프에 존재하지 않는다. 색인 실패는 시스템 결함이 아니라 평가 구성 오류였다.",
+      "fix": "실물 코퍼스로 만든 data/goldenset.json(14문항)으로 교체하고, answerable 문항의 expected_path 27개가 실제 그래프에 존재하는지 저장 전 대조 검증."
+    },
+    {
+      "seq": 3,
+      "when": "실물 골든셋 + 실물 그래프 (규칙 전용)",
+      "goldenset_source": "goldenset.json",
+      "graph_source": "graph.json",
+      "by_hop": {
+        "1": {"graphrag": 1.0, "basic_rag": 0.5},
+        "2": {"graphrag": 0.6, "basic_rag": 0.6},
+        "3": {"graphrag": 0.0, "basic_rag": 0.5}
+      },
+      "failure_layer_counts": {"index": 0, "retrieval": 4, "generation": 1},
+      "observed_problem": "색인 실패는 0이 됐으나 탐색 실패 4건, 생성 실패 1건. 2홉에서 대조군을 못 이겼다.",
+      "root_cause": "두 가지였다. (1) 탐색: 2홉 질문인데 시드 자신의 FOUNDED 엣지로 1홉 답변을 내고 중간 인물을 거치지 않았다. 예) '김좌진이 참여한 전투에 함께 참전한 인물이 세운 조직은?' -> 김좌진 자신의 조직을 답함. Q07 은 정답 목록에 우연히 겹쳐 answer_acc 1.0 을 받았지만 path_recall 0.8 이 오답 추론을 잡아냈다. (2) 생성: Q09 는 근거 삼중항이 컨텍스트에 있는데도 거절했다. 답 타입이 Organization 이 아니라 Person 인 교집합형 질문을 합성기가 처리하지 못했다.",
+      "fix": "경유 신호('같이 있던/함께 참전한')가 있는 질문은 seed 자신의 엣지를 후보에서 제외하고 Other != seed 인 경로만 채택. 질문에서 답 타입(Person/Event/Organization)을 판정하도록 일반화."
+    },
+    {
+      "seq": 4,
+      "when": "실물 골든셋 + 실물 그래프 (LLM 증강, 합성 수정 전)",
+      "goldenset_source": "goldenset.json",
+      "graph_source": "graph.json",
+      "by_hop": {
+        "1": {"graphrag": 1.0, "basic_rag": 0.6},
+        "2": {"graphrag": 0.9, "basic_rag": 0.4},
+        "3": {"graphrag": 1.0, "basic_rag": 0.5}
+      },
+      "failure_layer_counts": {"index": 0, "retrieval": 0, "generation": 1},
+      "observed_problem": "탐색 실패는 사라졌으나 LLM 증강을 켜면 오히려 점수가 떨어졌다(규칙 전용 1.000 vs LLM 0.955).",
+      "root_cause": "LLM 합성이 '탄 경로'와 다른 사실을 서술했다. 기계 기록 traversed_path 는 청산리 전투인데 답변 산문은 봉오동 전투라고 했다. 원인은 LLM 에게 후보 경로 5개와 삼중항 30개를 통째로 주고 3블록 전체를 쓰게 한 것. 코드가 고른 경로와 LLM 이 고른 경로가 갈렸다. 또 코드가 만든 출처 블록이 LLM 경로에서 버려져 8개 중 1개만 표시됐다.",
+      "fix": "LLM 의 역할을 '확정된 결정론적 요약의 문장 다듬기'로 축소. 경로 블록과 출처 블록은 코드가 소유. LLM 출력에 허용 개체 집합 밖의 그래프 노드가 등장하거나 1순위 정답이 사라지면 결정론적 문장으로 폴백하고 runs.jsonl 에 llm_fallback_reason 을 남긴다."
+    },
+    {
+      "seq": 5,
+      "when": "최종 (실물 골든셋 + 실물 그래프, 두 모드)",
+      "goldenset_source": "goldenset.json",
+      "graph_source": "graph.json",
+      "rule_only": {
+        "by_hop": {"1": {"graphrag": 1.0, "basic_rag": 0.5}, "2": {"graphrag": 1.0, "basic_rag": 0.6}, "3": {"graphrag": 1.0, "basic_rag": 0.5}},
+        "overall": {"graphrag": 1.0, "basic_rag": 0.545},
+        "failure_layer_counts": {"index": 0, "retrieval": 0, "generation": 0}
+      },
+      "llm_augmented": {
+        "by_hop": {"1": {"graphrag": 1.0, "basic_rag": 0.6}, "2": {"graphrag": 1.0, "basic_rag": 0.4}, "3": {"graphrag": 1.0, "basic_rag": 0.5}},
+        "overall": {"graphrag": 1.0, "basic_rag": 0.5},
+        "failure_layer_counts": {"index": 0, "retrieval": 0, "generation": 0}
+      },
+      "refusal": {"n": 3, "accuracy": 1.0, "hallucinated": 0},
+      "caveat": "최종 골든셋에서 실패 0건이 나온 것을 '이 시스템에 실패가 없다'로 읽으면 안 된다. 색인 실패가 0인 것은 부분적으로 구성상 당연하다 — 골든셋의 expected_path 를 저장 전에 그래프와 대조 검증했기 때문에, 그래프에 없는 사실을 묻는 answerable 문항이 애초에 들어갈 수 없다. 따라서 이 평가가 실제로 측정하는 것은 색인 커버리지가 아니라 '이미 색인된 사실을 탐색과 생성이 온전히 회수하는가' 다. 색인층을 제대로 측정하려면 그래프를 보지 않고 원문만 읽어 만든 별도 골든셋이 필요하다."
+    }
+  ],
+  "failure_layer_definitions": {
+    "index": "expected_path 삼중항이 지식 그래프에 없음 -> 추출 규칙·스키마 보강",
+    "retrieval": "그래프엔 있으나 context_triples 에 없음 -> 반경·예산 조정",
+    "generation": "컨텍스트엔 있으나 답변이 틀림 -> 합성 프롬프트·템플릿 개선"
+  }
+}
