@@ -23,6 +23,7 @@ desktop.ini
 *.tmp
 output/*.json.tmp
 .scratch/
+.playwright-mcp/
 
 # 주의: output/ 과 data/ 는 채점 재현을 위해 커밋한다 (무시하지 않는다).
 #       단 LLM 응답 캐시는 용량이 커질 수 있으므로 필요 시 아래 줄의 주석을 해제한다.

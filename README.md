@@ -21,6 +21,18 @@
 
 ---
 
+## 🖥️ 웹 데모 화면 미리보기 (`app.py`)
+
+| 💬 [1] 2홉 질의응답 및 추론 경로 탐색 | 🛡️ [2] 환각 방지 거절 가드레일 동작 |
+| :---: | :---: |
+| ![질문하기 탭](docs/demo_tab1_query.png) | ![거절 가드레일](docs/demo_tab1_refusal.png) |
+
+| 📊 [3] GraphRAG vs Basic RAG 대조 평가 | ⚙️ [4] OpenAI API 키 보안 관리 설정 |
+| :---: | :---: |
+| ![평가 결과 탭](docs/demo_tab2_eval.png) | ![설정 탭](docs/demo_tab3_settings.png) |
+
+---
+
 ## 🏗️ 아키텍처 (LangGraph 에이전트 파이프라인)
 
 ```
