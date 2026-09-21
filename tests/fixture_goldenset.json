@@ -1,0 +1,308 @@
+{
+  "version": "1.0",
+  "scoring_criteria": {
+    "answer_correct": "기대 정답 문자열(또는 aliases 중 하나)이 답변에 포함되면 1.0, 부분 포함 0.5, 없으면 0.0",
+    "path_recall": "expected_path의 삼중항 중 실제 수집된 근거 삼중항에 포함된 비율",
+    "refusal_correct": "unanswerable 문항에서 config.generation.refusal_text 를 출력하면 1.0"
+  },
+  "items": [
+    {
+      "id": "Q01",
+      "hops": 1,
+      "type": "local",
+      "question": "안중근이 참여한 사건은?",
+      "expected_answer": [
+        "하얼빈 의거"
+      ],
+      "expected_path": [
+        {
+          "head": "안중근",
+          "relation": "PARTICIPATED_IN",
+          "tail": "하얼빈 의거"
+        }
+      ],
+      "evidence": [
+        {
+          "doc": "안중근",
+          "quote": "1909년 10월 26일 안중근은 하얼빈 역에서 이토 히로부미를 사살하였다."
+        }
+      ],
+      "answerable": true
+    },
+    {
+      "id": "Q02",
+      "hops": 1,
+      "type": "local",
+      "question": "김구가 설립한 조직은?",
+      "expected_answer": [
+        "한인애국단",
+        "대한민국 임시정부"
+      ],
+      "expected_path": [
+        {
+          "head": "김구",
+          "relation": "FOUNDED",
+          "tail": "한인애국단"
+        }
+      ],
+      "evidence": [
+        {
+          "doc": "김구",
+          "quote": "김구는 1931년 임시정부의 침체를 극복하기 위해 한인애국단을 조직하였다."
+        }
+      ],
+      "answerable": true
+    },
+    {
+      "id": "Q03",
+      "hops": 1,
+      "type": "local",
+      "question": "김좌진이 참전한 사건은?",
+      "expected_answer": [
+        "청산리 전투"
+      ],
+      "expected_path": [
+        {
+          "head": "김좌진",
+          "relation": "PARTICIPATED_IN",
+          "tail": "청산리 전투"
+        }
+      ],
+      "evidence": [
+        {
+          "doc": "김좌진",
+          "quote": "김좌진은 북로군정서를 이끌고 1920년 10월 청산리 전투에서 일본군을 대파하였다."
+        }
+      ],
+      "answerable": true
+    },
+    {
+      "id": "Q04",
+      "hops": 1,
+      "type": "local",
+      "question": "이회영이 설립한 학교 또는 조직은?",
+      "expected_answer": [
+        "신흥무관학교",
+        "신민회"
+      ],
+      "expected_path": [
+        {
+          "head": "이회영",
+          "relation": "FOUNDED",
+          "tail": "신흥무관학교"
+        }
+      ],
+      "evidence": [
+        {
+          "doc": "이회영",
+          "quote": "이회영 6형제는 만주로 망명하여 신흥무관학교를 설립하고 독립군을 양성하였다."
+        }
+      ],
+      "answerable": true
+    },
+    {
+      "id": "Q05",
+      "hops": 2,
+      "type": "path",
+      "question": "안중근이 참여한 사건에 함께 참여한 인물은?",
+      "expected_answer": [
+        "우덕순"
+      ],
+      "expected_path": [
+        {
+          "head": "안중근",
+          "relation": "PARTICIPATED_IN",
+          "tail": "하얼빈 의거"
+        },
+        {
+          "head": "우덕순",
+          "relation": "PARTICIPATED_IN",
+          "tail": "하얼빈 의거"
+        }
+      ],
+      "evidence": [
+        {
+          "doc": "우덕순",
+          "quote": "우덕순은 안중근과 함께 하얼빈 의거를 모의하고 거사에 동참하였다."
+        }
+      ],
+      "answerable": true
+    },
+    {
+      "id": "Q06",
+      "hops": 2,
+      "type": "path",
+      "question": "김구가 설립한 조직이 참여한 사건은?",
+      "expected_answer": [
+        "훙커우 공원 의거",
+        "도쿄 의거"
+      ],
+      "expected_path": [
+        {
+          "head": "김구",
+          "relation": "FOUNDED",
+          "tail": "한인애국단"
+        },
+        {
+          "head": "한인애국단",
+          "relation": "PARTICIPATED_IN",
+          "tail": "훙커우 공원 의거"
+        }
+      ],
+      "evidence": [
+        {
+          "doc": "한인애국단",
+          "quote": "한인애국단은 윤봉길을 파견하여 상하이 훙커우 공원 의거를 성공적으로 결행하였다."
+        }
+      ],
+      "answerable": true
+    },
+    {
+      "id": "Q07",
+      "hops": 2,
+      "type": "path",
+      "question": "안중근이 참여한 사건에 같이 있던 인물이 세운 조직은?",
+      "expected_answer": [
+        "대한국민회"
+      ],
+      "expected_path": [
+        {
+          "head": "안중근",
+          "relation": "PARTICIPATED_IN",
+          "tail": "하얼빈 의거"
+        },
+        {
+          "head": "우덕순",
+          "relation": "PARTICIPATED_IN",
+          "tail": "하얼빈 의거"
+        },
+        {
+          "head": "우덕순",
+          "relation": "FOUNDED",
+          "tail": "대한국민회"
+        }
+      ],
+      "evidence": [
+        {
+          "doc": "우덕순",
+          "quote": "우덕순은 블라디보스토크에서 대한국민회를 창립하고 독립운동을 전개하였다."
+        }
+      ],
+      "answerable": true
+    },
+    {
+      "id": "Q08",
+      "hops": 2,
+      "type": "path",
+      "question": "윤봉길이 참여한 사건에 관련된 조직을 창설한 인물은?",
+      "expected_answer": [
+        "김구"
+      ],
+      "expected_path": [
+        {
+          "head": "윤봉길",
+          "relation": "PARTICIPATED_IN",
+          "tail": "훙커우 공원 의거"
+        },
+        {
+          "head": "한인애국단",
+          "relation": "PARTICIPATED_IN",
+          "tail": "훙커우 공원 의거"
+        },
+        {
+          "head": "김구",
+          "relation": "FOUNDED",
+          "tail": "한인애국단"
+        }
+      ],
+      "evidence": [
+        {
+          "doc": "김구",
+          "quote": "김구는 1931년 임시정부의 침체를 극복하기 위해 한인애국단을 조직하였다."
+        }
+      ],
+      "answerable": true
+    },
+    {
+      "id": "Q09",
+      "hops": 2,
+      "type": "path",
+      "question": "3·1 운동에 참여한 신채호가 설립에 참여한 조직은?",
+      "expected_answer": [
+        "신민회"
+      ],
+      "expected_path": [
+        {
+          "head": "신채호",
+          "relation": "PARTICIPATED_IN",
+          "tail": "3·1 운동"
+        },
+        {
+          "head": "신채호",
+          "relation": "FOUNDED",
+          "tail": "신민회"
+        }
+      ],
+      "evidence": [
+        {
+          "doc": "신민회",
+          "quote": "신채호는 신민회에 발기인으로 참여하여 항일 구국 운동을 이끌었다."
+        }
+      ],
+      "answerable": true
+    },
+    {
+      "id": "Q10",
+      "hops": 3,
+      "type": "path",
+      "question": "훙커우 공원 의거에 관련된 단체를 설립한 인물이 참여한 사건은?",
+      "expected_answer": [
+        "3·1 운동"
+      ],
+      "expected_path": [
+        {
+          "head": "한인애국단",
+          "relation": "PARTICIPATED_IN",
+          "tail": "훙커우 공원 의거"
+        },
+        {
+          "head": "김구",
+          "relation": "FOUNDED",
+          "tail": "한인애국단"
+        },
+        {
+          "head": "김구",
+          "relation": "PARTICIPATED_IN",
+          "tail": "3·1 운동"
+        }
+      ],
+      "evidence": [
+        {
+          "doc": "김구",
+          "quote": "김구는 1919년 3·1 운동 이후 상하이로 망명하여 독립운동에 투신하였다."
+        }
+      ],
+      "answerable": true
+    },
+    {
+      "id": "Q11",
+      "hops": 2,
+      "type": "unanswerable",
+      "question": "안중근이 설립한 방송국은?",
+      "expected_answer": [],
+      "expected_path": [],
+      "evidence": [],
+      "answerable": false
+    },
+    {
+      "id": "Q12",
+      "hops": 2,
+      "type": "unanswerable",
+      "question": "윤봉길이 세운 우주센터는?",
+      "expected_answer": [],
+      "expected_path": [],
+      "evidence": [],
+      "answerable": false
+    }
+  ]
+}

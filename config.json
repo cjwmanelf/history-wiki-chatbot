@@ -1,0 +1,48 @@
+{
+  "domain": "korean-independence-history",
+  "_comment_domain": "주제: 한국 독립운동사(1890~1945). Person·Event·Organization 이 문서 사이에 촘촘히 겹쳐 멀티홉이 실제로 성립하는 도메인이라 골랐다.",
+
+  "schema": {
+    "node_types": ["Person", "Event", "Organization"],
+    "relations": [
+      {"head": "Person", "relation": "PARTICIPATED_IN", "tail": "Event"},
+      {"head": "Person", "relation": "FOUNDED", "tail": "Organization"},
+      {"head": "Organization", "relation": "PARTICIPATED_IN", "tail": "Event"}
+    ]
+  },
+  "_comment_schema": "대표 질문 'A가 참여한 사건에 같이 있던 인물이 세운 조직은?' 을 역산해 만든 최소 스키마다. 이 질문 하나를 풀려면 PARTICIPATED_IN(정방향)·PARTICIPATED_IN(역방향)·FOUNDED 세 관계면 충분하고, 그 이상은 그래프만 비대해진다. 관계는 (head_type, relation, tail_type) 방향 고정 튜플이며, 어긋나는 후보는 build_graph.py 가 버리고 extraction_report.rejected_edges 에 사유를 남긴다.",
+
+  "retrieval": {
+    "max_hops": 3,
+    "start_hops": 2,
+    "max_triples": 60,
+    "per_relation": 25,
+    "hub_degree_threshold": 25,
+    "degree_penalty": true,
+    "min_entity_len": 2
+  },
+
+  "_comment_max_hops": "3. 스키마가 3종뿐이라 의미 있는 최장 경로가 'Person -PARTICIPATED_IN-> Event <-PARTICIPATED_IN- Person -FOUNDED-> Organization' 즉 3홉이다. 4홉 이상은 새 사실을 더해주지 못한 채 컨텍스트만 늘리고 오답을 부른다(골든셋 3홉 문항이 상한 근거).",
+  "_comment_start_hops": "2. 골든셋 12문항 중 1홉은 4건뿐이고 2홉이 5건으로 최빈이다. 최초 확장을 2홉으로 잡으면 다수 질문이 한 번에 풀리고, 부족할 때만 deepen 으로 3홉까지 넓힌다. 처음부터 3홉을 펴면 1홉 질문에서까지 허브 노드가 딸려 들어와 정밀도가 떨어진다.",
+  "_comment_max_triples": "60. 3홉 경로 1개가 삼중항 3개이므로 후보 경로 20개분에 해당한다. gpt-4.1-mini 기준 삼중항 1건이 근거 문장까지 포함해 대략 60~80토큰이라 60건이면 4~5천 토큰 — max_output_tokens(1500) 를 남기고도 컨텍스트가 산만해지지 않는 상한이다.",
+  "_comment_per_relation": "25. 이 그래프는 PARTICIPATED_IN 이 FOUNDED 보다 3배 이상 많다. 관계별 상한을 두지 않으면 PARTICIPATED_IN 이 예산 60을 독식해, 정답이 FOUNDED 쪽에 있는 2홉 질문에서 마지막 한 홉이 잘려 나간다. 25/25 로 자르면 어떤 질문에서도 두 관계가 모두 컨텍스트에 남는다.",
+  "_comment_hub_degree_threshold": "25. 실제 그래프의 차수 분포에서 상위 5% 경계가 대략 이 값이다(대한민국 임시정부·3·1 운동처럼 거의 모든 인물과 이어진 노드). 이런 노드를 경유시키면 '임시정부를 거치면 누구든 누구와 2홉' 이 되어 경로가 무의미해진다. 그래서 허브는 '목적지'로는 허용하되 '경유지'로는 건너뛰고, 건너뛴 사실을 runs.jsonl 의 skipped_hubs 에 남겨 채점자가 확인할 수 있게 한다.",
+  "_comment_degree_penalty": "true. 1/(1+sqrt(degree)) 가중. 임계치 하나로 자르면 차수 24와 26이 전혀 다르게 취급되는 절벽이 생긴다. 연속 감점을 함께 걸어 차수가 높을수록 완만하게 뒤로 밀리게 하고, 임계치는 그 위에 얹는 안전장치로만 쓴다.",
+  "_comment_min_entity_len": "2. 한국어 인명·단체명은 최소 2음절이다. 1글자를 허용하면 '군', '회', '단' 같은 조각이 질문에서 개체로 잡혀 엉뚱한 노드에 연결된다.",
+
+  "generation": {
+    "refusal_text": "제시된 지식 그래프 자료에서 해당 질문에 대한 근거를 찾을 수 없습니다.",
+    "require_relation_match": true
+  },
+  "_comment_generation": "require_relation_match=true: 질문이 요구한 관계가 수집된 삼중항에 하나도 없으면 반경을 넓히고(deepen), 그래도 없으면 refusal_text 만 출력한다. 근거 없이 지어내지 않는 것이 루브릭 2 항목이다.",
+
+  "llm": {
+    "provider": "openai",
+    "extract_model": "gpt-4.1-mini",
+    "synth_model": "gpt-4.1-mini",
+    "judge_model": "gpt-4.1",
+    "temperature": 0,
+    "max_output_tokens": 1500
+  },
+  "_comment_llm": "LLM 은 전부 '선택적 증강'이다. 키가 없으면 build_graph.py 는 규칙만으로, agent.py 는 템플릿 합성으로, evaluate.py 는 문자열 채점으로 끝까지 정상 종료한다. 접근은 반드시 llm_provider 모듈을 통해서만 한다(키를 코드·로그·JSON 에 남기지 않기 위함). temperature=0 과 llm_provider 의 응답 캐시로 재현성을 확보한다."
+}

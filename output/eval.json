@@ -1,0 +1,62 @@
+{
+  "run_at": "2026-09-21T02:14:49.361611+00:00",
+  "graph_source": "graph.json",
+  "goldenset_source": "goldenset.json",
+  "corpus_docs": 177,
+  "n_items": 14,
+  "criteria": {
+    "answer_correct": "기대 정답 문자열(또는 aliases 중 하나)이 답변에 포함되면 1.0, 부분 포함 0.5, 없으면 0.0",
+    "path_recall": "expected_path의 삼중항 중 실제 수집된 근거 삼중항에 포함된 비율",
+    "refusal_correct": "unanswerable 문항에서 config.generation.refusal_text 를 출력하면 1.0"
+  },
+  "by_hop": {
+    "1": {
+      "n": 5,
+      "graphrag": {
+        "answer_acc": 1.0,
+        "path_recall": 1.0,
+        "refusal_ok": null
+      },
+      "basic_rag": {
+        "answer_acc": 0.5
+      }
+    },
+    "2": {
+      "n": 5,
+      "graphrag": {
+        "answer_acc": 1.0,
+        "path_recall": 1.0,
+        "refusal_ok": null
+      },
+      "basic_rag": {
+        "answer_acc": 0.6
+      }
+    },
+    "3": {
+      "n": 1,
+      "graphrag": {
+        "answer_acc": 1.0,
+        "path_recall": 1.0,
+        "refusal_ok": null
+      },
+      "basic_rag": {
+        "answer_acc": 0.5
+      }
+    }
+  },
+  "unanswerable": {
+    "n": 3,
+    "refusal_accuracy": 1.0,
+    "hallucinated": 0
+  },
+  "overall": {
+    "graphrag_answer_acc": 1.0,
+    "basic_rag_answer_acc": 0.545
+  },
+  "failures": [],
+  "failure_layer_counts": {
+    "index": 0,
+    "retrieval": 0,
+    "generation": 0
+  }
+}

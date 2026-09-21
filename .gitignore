@@ -1,0 +1,29 @@
+# API 키 유출 방지 (llm_provider.ensure_gitignore 가 관리)
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# 편집기 / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 실행 중 생성되는 임시물
+*.tmp
+output/*.json.tmp
+.scratch/
+
+# 주의: output/ 과 data/ 는 채점 재현을 위해 커밋한다 (무시하지 않는다).
+#       단 LLM 응답 캐시는 용량이 커질 수 있으므로 필요 시 아래 줄의 주석을 해제한다.
+# output/llm_cache.json

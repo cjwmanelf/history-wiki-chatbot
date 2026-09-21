@@ -1,0 +1,790 @@
+{
+  "nodes": [
+    {
+      "id": "안중근",
+      "type": "Person",
+      "aliases": [
+        "안중근",
+        "安重根",
+        "도마 안중근"
+      ],
+      "sources": [
+        "안중근",
+        "하얼빈 의거"
+      ],
+      "doc_count": 2,
+      "degree": 1
+    },
+    {
+      "id": "우덕순",
+      "type": "Person",
+      "aliases": [
+        "우덕순",
+        "禹德淳"
+      ],
+      "sources": [
+        "우덕순",
+        "하얼빈 의거"
+      ],
+      "doc_count": 2,
+      "degree": 2
+    },
+    {
+      "id": "김구",
+      "type": "Person",
+      "aliases": [
+        "김구",
+        "金九",
+        "백범 김구"
+      ],
+      "sources": [
+        "김구",
+        "대한민국 임시정부",
+        "한인애국단"
+      ],
+      "doc_count": 3,
+      "degree": 3
+    },
+    {
+      "id": "윤봉길",
+      "type": "Person",
+      "aliases": [
+        "윤봉길",
+        "尹奉吉",
+        "매헌 윤봉길"
+      ],
+      "sources": [
+        "윤봉길",
+        "훙커우 공원 의거"
+      ],
+      "doc_count": 2,
+      "degree": 1
+    },
+    {
+      "id": "이봉창",
+      "type": "Person",
+      "aliases": [
+        "이봉창",
+        "李奉昌"
+      ],
+      "sources": [
+        "이봉창",
+        "도쿄 의거"
+      ],
+      "doc_count": 2,
+      "degree": 1
+    },
+    {
+      "id": "신채호",
+      "type": "Person",
+      "aliases": [
+        "신채호",
+        "申采浩",
+        "단재 신채호"
+      ],
+      "sources": [
+        "신채호",
+        "신민회"
+      ],
+      "doc_count": 2,
+      "degree": 2
+    },
+    {
+      "id": "안창호",
+      "type": "Person",
+      "aliases": [
+        "안창호",
+        "安昌浩",
+        "도산 안창호"
+      ],
+      "sources": [
+        "안창호",
+        "신민회"
+      ],
+      "doc_count": 2,
+      "degree": 1
+    },
+    {
+      "id": "김좌진",
+      "type": "Person",
+      "aliases": [
+        "김좌진",
+        "金佐鎭",
+        "백야 김좌진"
+      ],
+      "sources": [
+        "김좌진",
+        "청산리 전투",
+        "북로군정서"
+      ],
+      "doc_count": 3,
+      "degree": 2
+    },
+    {
+      "id": "홍범도",
+      "type": "Person",
+      "aliases": [
+        "홍범도",
+        "洪範圖"
+      ],
+      "sources": [
+        "홍범도",
+        "봉오동 전투",
+        "청산리 전투"
+      ],
+      "doc_count": 3,
+      "degree": 2
+    },
+    {
+      "id": "이동휘",
+      "type": "Person",
+      "aliases": [
+        "이동휘",
+        "李東輝"
+      ],
+      "sources": [
+        "이동휘",
+        "대한민국 임시정부"
+      ],
+      "doc_count": 2,
+      "degree": 2
+    },
+    {
+      "id": "이회영",
+      "type": "Person",
+      "aliases": [
+        "이회영",
+        "李會榮",
+        "우당 이회영"
+      ],
+      "sources": [
+        "이회영",
+        "신흥무관학교",
+        "신민회"
+      ],
+      "doc_count": 3,
+      "degree": 2
+    },
+    {
+      "id": "하얼빈 의거",
+      "type": "Event",
+      "aliases": [
+        "하얼빈 의거",
+        "하얼빈역 의거",
+        "이토 히로부미 저격 사건"
+      ],
+      "sources": [
+        "안중근",
+        "우덕순",
+        "하얼빈 의거"
+      ],
+      "doc_count": 3,
+      "degree": 2
+    },
+    {
+      "id": "훙커우 공원 의거",
+      "type": "Event",
+      "aliases": [
+        "훙커우 공원 의거",
+        "상하이 의거",
+        "훙커우 공원 폭탄 투척"
+      ],
+      "sources": [
+        "윤봉길",
+        "한인애국단"
+      ],
+      "doc_count": 2,
+      "degree": 2
+    },
+    {
+      "id": "도쿄 의거",
+      "type": "Event",
+      "aliases": [
+        "도쿄 의거",
+        "사쿠라다문 의거"
+      ],
+      "sources": [
+        "이봉창",
+        "한인애국단"
+      ],
+      "doc_count": 2,
+      "degree": 2
+    },
+    {
+      "id": "3·1 운동",
+      "type": "Event",
+      "aliases": [
+        "3·1 운동",
+        "3.1 운동",
+        "삼일운동",
+        "기미독립운동"
+      ],
+      "sources": [
+        "김구",
+        "신채호",
+        "대한민국 임시정부"
+      ],
+      "doc_count": 3,
+      "degree": 4
+    },
+    {
+      "id": "청산리 전투",
+      "type": "Event",
+      "aliases": [
+        "청산리 전투",
+        "청산리 대첩"
+      ],
+      "sources": [
+        "김좌진",
+        "홍범도",
+        "북로군정서"
+      ],
+      "doc_count": 3,
+      "degree": 3
+    },
+    {
+      "id": "봉오동 전투",
+      "type": "Event",
+      "aliases": [
+        "봉오동 전투",
+        "봉오동 대첩"
+      ],
+      "sources": [
+        "홍범도",
+        "대한독립군"
+      ],
+      "doc_count": 2,
+      "degree": 2
+    },
+    {
+      "id": "한인애국단",
+      "type": "Organization",
+      "aliases": [
+        "한인애국단",
+        "韓人愛國團"
+      ],
+      "sources": [
+        "김구",
+        "윤봉길",
+        "이봉창"
+      ],
+      "doc_count": 3,
+      "degree": 3
+    },
+    {
+      "id": "대한민국 임시정부",
+      "type": "Organization",
+      "aliases": [
+        "대한민국 임시정부",
+        "임시정부",
+        "상해 임시정부"
+      ],
+      "sources": [
+        "김구",
+        "이동휘",
+        "대한민국 임시정부"
+      ],
+      "doc_count": 3,
+      "degree": 3
+    },
+    {
+      "id": "신민회",
+      "type": "Organization",
+      "aliases": [
+        "신민회",
+        "新民會"
+      ],
+      "sources": [
+        "안창호",
+        "신채호",
+        "이회영"
+      ],
+      "doc_count": 3,
+      "degree": 3
+    },
+    {
+      "id": "대한국민회",
+      "type": "Organization",
+      "aliases": [
+        "대한국민회",
+        "大韓國民會"
+      ],
+      "sources": [
+        "우덕순"
+      ],
+      "doc_count": 1,
+      "degree": 1
+    },
+    {
+      "id": "북로군정서",
+      "type": "Organization",
+      "aliases": [
+        "북로군정서",
+        "北路軍政署"
+      ],
+      "sources": [
+        "김좌진",
+        "청산리 전투"
+      ],
+      "doc_count": 2,
+      "degree": 2
+    },
+    {
+      "id": "신흥무관학교",
+      "type": "Organization",
+      "aliases": [
+        "신흥무관학교",
+        "新興武官學校"
+      ],
+      "sources": [
+        "이회영"
+      ],
+      "doc_count": 1,
+      "degree": 1
+    },
+    {
+      "id": "대한독립군",
+      "type": "Organization",
+      "aliases": [
+        "대한독립군",
+        "大韓獨立軍"
+      ],
+      "sources": [
+        "홍범도",
+        "봉오동 전투"
+      ],
+      "doc_count": 2,
+      "degree": 1
+    }
+  ],
+  "edges": [
+    {
+      "head": "안중근",
+      "relation": "PARTICIPATED_IN",
+      "tail": "하얼빈 의거",
+      "origin": "rule",
+      "confidence": 0.95,
+      "sources": [
+        "안중근"
+      ],
+      "evidence": [
+        "1909년 10월 26일 안중근은 하얼빈 역에서 이토 히로부미를 사살하였다."
+      ],
+      "extractor": "rule_participated_v1"
+    },
+    {
+      "head": "우덕순",
+      "relation": "PARTICIPATED_IN",
+      "tail": "하얼빈 의거",
+      "origin": "rule",
+      "confidence": 0.95,
+      "sources": [
+        "우덕순"
+      ],
+      "evidence": [
+        "우덕순은 안중근과 함께 하얼빈 의거를 모의하고 거사에 동참하였다."
+      ],
+      "extractor": "rule_participated_v1"
+    },
+    {
+      "head": "우덕순",
+      "relation": "FOUNDED",
+      "tail": "대한국민회",
+      "origin": "rule",
+      "confidence": 0.9,
+      "sources": [
+        "우덕순"
+      ],
+      "evidence": [
+        "우덕순은 블라디보스토크에서 대한국민회를 창립하고 독립운동을 전개하였다."
+      ],
+      "extractor": "rule_founded_v1"
+    },
+    {
+      "head": "김구",
+      "relation": "PARTICIPATED_IN",
+      "tail": "3·1 운동",
+      "origin": "rule",
+      "confidence": 0.9,
+      "sources": [
+        "김구"
+      ],
+      "evidence": [
+        "김구는 1919년 3·1 운동 이후 상하이로 망명하여 독립운동에 투신하였다."
+      ],
+      "extractor": "rule_participated_v2"
+    },
+    {
+      "head": "김구",
+      "relation": "FOUNDED",
+      "tail": "한인애국단",
+      "origin": "rule",
+      "confidence": 0.95,
+      "sources": [
+        "김구",
+        "한인애국단"
+      ],
+      "evidence": [
+        "김구는 1931년 임시정부의 침체를 극복하기 위해 한인애국단을 조직하였다."
+      ],
+      "extractor": "rule_founded_v1"
+    },
+    {
+      "head": "김구",
+      "relation": "FOUNDED",
+      "tail": "대한민국 임시정부",
+      "origin": "llm",
+      "confidence": 0.85,
+      "sources": [
+        "김구"
+      ],
+      "evidence": [
+        "김구는 상하이에서 대한민국 임시정부의 기틀을 마련하고 정부를 이끌었다."
+      ],
+      "extractor": "llm_relation_extractor"
+    },
+    {
+      "head": "윤봉길",
+      "relation": "PARTICIPATED_IN",
+      "tail": "훙커우 공원 의거",
+      "origin": "rule",
+      "confidence": 0.95,
+      "sources": [
+        "윤봉길"
+      ],
+      "evidence": [
+        "1932년 윤봉길은 훙커우 공원 의거를 감행하여 일본 군관민 수뇌부를 처단하였다."
+      ],
+      "extractor": "rule_participated_v1"
+    },
+    {
+      "head": "이봉창",
+      "relation": "PARTICIPATED_IN",
+      "tail": "도쿄 의거",
+      "origin": "rule",
+      "confidence": 0.95,
+      "sources": [
+        "이봉창"
+      ],
+      "evidence": [
+        "1932년 1월 이봉창은 도쿄 사쿠라다문 앞에서 일왕에게 폭탄을 투척하는 도쿄 의거를 벌였다."
+      ],
+      "extractor": "rule_participated_v1"
+    },
+    {
+      "head": "한인애국단",
+      "relation": "PARTICIPATED_IN",
+      "tail": "훙커우 공원 의거",
+      "origin": "rule",
+      "confidence": 0.92,
+      "sources": [
+        "한인애국단",
+        "윤봉길"
+      ],
+      "evidence": [
+        "한인애국단은 윤봉길을 파견하여 상하이 훙커우 공원 의거를 성공적으로 결행하였다."
+      ],
+      "extractor": "rule_participated_v3"
+    },
+    {
+      "head": "한인애국단",
+      "relation": "PARTICIPATED_IN",
+      "tail": "도쿄 의거",
+      "origin": "rule",
+      "confidence": 0.92,
+      "sources": [
+        "한인애국단",
+        "이봉창"
+      ],
+      "evidence": [
+        "한인애국단 소속 이봉창 의사가 도쿄 의거를 일으켰다."
+      ],
+      "extractor": "rule_participated_v3"
+    },
+    {
+      "head": "안창호",
+      "relation": "FOUNDED",
+      "tail": "신민회",
+      "origin": "rule",
+      "confidence": 0.95,
+      "sources": [
+        "안창호",
+        "신민회"
+      ],
+      "evidence": [
+        "안창호는 1907년 양기탁, 신채호 등과 함께 비밀결사 신민회를 창립하였다."
+      ],
+      "extractor": "rule_founded_v1"
+    },
+    {
+      "head": "신채호",
+      "relation": "FOUNDED",
+      "tail": "신민회",
+      "origin": "rule",
+      "confidence": 0.95,
+      "sources": [
+        "신채호",
+        "신민회"
+      ],
+      "evidence": [
+        "신채호는 신민회에 발기인으로 참여하여 항일 구국 운동을 이끌었다."
+      ],
+      "extractor": "rule_founded_v1"
+    },
+    {
+      "head": "신채호",
+      "relation": "PARTICIPATED_IN",
+      "tail": "3·1 운동",
+      "origin": "rule",
+      "confidence": 0.88,
+      "sources": [
+        "신채호"
+      ],
+      "evidence": [
+        "신채호는 1919년 3·1 운동의 정신을 계승하여 무장 독립 투쟁론을 주창하였다."
+      ],
+      "extractor": "rule_participated_v2"
+    },
+    {
+      "head": "이회영",
+      "relation": "FOUNDED",
+      "tail": "신흥무관학교",
+      "origin": "rule",
+      "confidence": 0.95,
+      "sources": [
+        "이회영",
+        "신흥무관학교"
+      ],
+      "evidence": [
+        "이회영 6형제는 만주로 망명하여 신흥무관학교를 설립하고 독립군을 양성하였다."
+      ],
+      "extractor": "rule_founded_v1"
+    },
+    {
+      "head": "이회영",
+      "relation": "FOUNDED",
+      "tail": "신민회",
+      "origin": "rule",
+      "confidence": 0.95,
+      "sources": [
+        "이회영",
+        "신민회"
+      ],
+      "evidence": [
+        "이회영은 1907년 안창호 등과 함께 신민회를 조직하였다."
+      ],
+      "extractor": "rule_founded_v1"
+    },
+    {
+      "head": "김좌진",
+      "relation": "FOUNDED",
+      "tail": "북로군정서",
+      "origin": "rule",
+      "confidence": 0.95,
+      "sources": [
+        "김좌진",
+        "북로군정서"
+      ],
+      "evidence": [
+        "김좌진은 북로군정서 총사령관으로 독립군을 훈련시켰다."
+      ],
+      "extractor": "rule_founded_v1"
+    },
+    {
+      "head": "김좌진",
+      "relation": "PARTICIPATED_IN",
+      "tail": "청산리 전투",
+      "origin": "rule",
+      "confidence": 0.95,
+      "sources": [
+        "김좌진",
+        "청산리 전투"
+      ],
+      "evidence": [
+        "김좌진은 북로군정서를 이끌고 1920년 10월 청산리 전투에서 일본군을 대파하였다."
+      ],
+      "extractor": "rule_participated_v1"
+    },
+    {
+      "head": "북로군정서",
+      "relation": "PARTICIPATED_IN",
+      "tail": "청산리 전투",
+      "origin": "rule",
+      "confidence": 0.95,
+      "sources": [
+        "북로군정서",
+        "청산리 전투"
+      ],
+      "evidence": [
+        "북로군정서는 청산리 전투에서 주력 부대로 참전하여 큰 전과를 올렸다."
+      ],
+      "extractor": "rule_participated_v3"
+    },
+    {
+      "head": "홍범도",
+      "relation": "PARTICIPATED_IN",
+      "tail": "봉오동 전투",
+      "origin": "rule",
+      "confidence": 0.95,
+      "sources": [
+        "홍범도",
+        "봉오동 전투"
+      ],
+      "evidence": [
+        "홍범도는 1920년 6월 대한독립군을 지휘하여 봉오동 전투에서 대승을 거두었다."
+      ],
+      "extractor": "rule_participated_v1"
+    },
+    {
+      "head": "홍범도",
+      "relation": "PARTICIPATED_IN",
+      "tail": "청산리 전투",
+      "origin": "rule",
+      "confidence": 0.95,
+      "sources": [
+        "홍범도",
+        "청산리 전투"
+      ],
+      "evidence": [
+        "홍범도의 연합부대는 김좌진의 북로군정서와 함께 청산리 전투에 참전하였다."
+      ],
+      "extractor": "rule_participated_v1"
+    },
+    {
+      "head": "대한독립군",
+      "relation": "PARTICIPATED_IN",
+      "tail": "봉오동 전투",
+      "origin": "rule",
+      "confidence": 0.95,
+      "sources": [
+        "대한독립군",
+        "봉오동 전투"
+      ],
+      "evidence": [
+        "대한독립군은 봉오동 전투에서 일본 정규군을 상대로 독립전쟁 첫 승리를 거두었다."
+      ],
+      "extractor": "rule_participated_v3"
+    },
+    {
+      "head": "이동휘",
+      "relation": "PARTICIPATED_IN",
+      "tail": "3·1 운동",
+      "origin": "rule",
+      "confidence": 0.88,
+      "sources": [
+        "이동휘"
+      ],
+      "evidence": [
+        "이동휘는 3·1 운동 이후 해외 무장 독립투쟁을 지원하였다."
+      ],
+      "extractor": "rule_participated_v2"
+    },
+    {
+      "head": "이동휘",
+      "relation": "FOUNDED",
+      "tail": "대한민국 임시정부",
+      "origin": "llm",
+      "confidence": 0.85,
+      "sources": [
+        "이동휘"
+      ],
+      "evidence": [
+        "이동휘는 대한민국 임시정부의 초대 국무총리로 취임하여 통합정부 수립에 기여하였다."
+      ],
+      "extractor": "llm_relation_extractor"
+    },
+    {
+      "head": "대한민국 임시정부",
+      "relation": "PARTICIPATED_IN",
+      "tail": "3·1 운동",
+      "origin": "rule",
+      "confidence": 0.9,
+      "sources": [
+        "대한민국 임시정부"
+      ],
+      "evidence": [
+        "대한민국 임시정부는 3·1 운동의 정신을 계승하여 1919년 수립되었다."
+      ],
+      "extractor": "rule_participated_v3"
+    }
+  ],
+  "alias_index": {
+    "안중근": "안중근",
+    "安重根": "안중근",
+    "도마 안중근": "안중근",
+    "우덕순": "우덕순",
+    "禹德淳": "우덕순",
+    "김구": "김구",
+    "金九": "김구",
+    "백범 김구": "김구",
+    "윤봉길": "윤봉길",
+    "尹奉吉": "윤봉길",
+    "매헌 윤봉길": "윤봉길",
+    "이봉창": "이봉창",
+    "李奉昌": "이봉창",
+    "신채호": "신채호",
+    "申采浩": "신채호",
+    "단재 신채호": "신채호",
+    "안창호": "안창호",
+    "安昌浩": "안창호",
+    "도산 안창호": "안창호",
+    "김좌진": "김좌진",
+    "金佐鎭": "김좌진",
+    "백야 김좌진": "김좌진",
+    "홍범도": "홍범도",
+    "洪範圖": "홍범도",
+    "이동휘": "이동휘",
+    "李東輝": "이동휘",
+    "이회영": "이회영",
+    "李會榮": "이회영",
+    "우당 이회영": "이회영",
+    "하얼빈 의거": "하얼빈 의거",
+    "하얼빈역 의거": "하얼빈 의거",
+    "이토 히로부미 저격 사건": "하얼빈 의거",
+    "훙커우 공원 의거": "훙커우 공원 의거",
+    "상하이 의거": "훙커우 공원 의거",
+    "훙커우 공원 폭탄 투척": "훙커우 공원 의거",
+    "도쿄 의거": "도쿄 의거",
+    "사쿠라다문 의거": "도쿄 의거",
+    "3·1 운동": "3·1 운동",
+    "3.1 운동": "3·1 운동",
+    "삼일운동": "3·1 운동",
+    "기미독립운동": "3·1 운동",
+    "청산리 전투": "청산리 전투",
+    "청산리 대첩": "청산리 전투",
+    "봉오동 전투": "봉오동 전투",
+    "봉오동 대첩": "봉오동 전투",
+    "한인애국단": "한인애국단",
+    "韓人愛國團": "한인애국단",
+    "대한민국 임시정부": "대한민국 임시정부",
+    "임시정부": "대한민국 임시정부",
+    "상해 임시정부": "대한민국 임시정부",
+    "신민회": "신민회",
+    "新民會": "신민회",
+    "대한국민회": "대한국민회",
+    "大韓國民會": "대한국민회",
+    "북로군정서": "북로군정서",
+    "北路軍政署": "북로군정서",
+    "신흥무관학교": "신흥무관학교",
+    "新興武官學校": "신흥무관학교",
+    "대한독립군": "대한독립군",
+    "大韓獨立軍": "대한독립군"
+  },
+  "stats": {
+    "nodes": 24,
+    "edges": 24,
+    "by_type": {
+      "Person": 11,
+      "Event": 6,
+      "Organization": 7
+    },
+    "by_relation": {
+      "PARTICIPATED_IN": 15,
+      "FOUNDED": 9
+    },
+    "by_origin": {
+      "rule": 22,
+      "llm": 2
+    }
+  }
+}
