@@ -94,9 +94,13 @@ params = st.query_params
 url_q = params.get("q", "")
 url_auto = params.get("auto", "0") in ("1", "true", "True")
 
+default_q = url_q if url_q else "안중근이 참여한 사건은?"
+if "main_query_field" not in st.session_state:
+    st.session_state["main_query_field"] = default_q
 if "query_input" not in st.session_state:
-    st.session_state["query_input"] = url_q if url_q else "안중근이 참여한 사건은?"
+    st.session_state["query_input"] = default_q
 elif url_q and st.session_state.get("_last_url_q") != url_q:
+    st.session_state["main_query_field"] = url_q
     st.session_state["query_input"] = url_q
     st.session_state["_last_url_q"] = url_q
 
@@ -105,6 +109,14 @@ auto_search = False
 if url_auto and url_q and not st.session_state.get("_auto_searched"):
     st.session_state["_auto_searched"] = True
     auto_search = True
+
+
+def set_example_query(q: str) -> None:
+    """예시 버튼 클릭 시 입력창에 반영하고 즉시 검색을 트리거한다."""
+    st.session_state["main_query_field"] = q
+    st.session_state["query_input"] = q
+    st.session_state["trigger_search"] = True
+
 
 tab1, tab2, tab3 = st.tabs(["💬 질문하기", "📊 평가 결과", "⚙️ 설정"])
 
@@ -124,25 +136,63 @@ with tab1:
         graph_kind = "실제 수집 그래프" if agent.graph_path == DEFAULT_GRAPH_PATH else "테스트 픽스처 그래프"
         st.info(f"💡 연결된 그래프: **{graph_kind}** ({len(agent.nodes_by_id)} 노드, {len(agent.graph_data.get('edges', []))} 엣지)")
 
-        st.markdown("**예시 질문 클릭:**")
-        ex_col1, ex_col2, ex_col3, ex_col4 = st.columns(4)
+        st.markdown("##### 💡 정상 답변 질문 예시 (클릭 시 자동 입력 및 즉시 실행):")
+        ex_col1, ex_col2, ex_col3 = st.columns(3)
+        ex_col1.button(
+            "🟢 [1홉] 안중근이 참여한 사건은?",
+            use_container_width=True,
+            on_click=set_example_query,
+            args=("안중근이 참여한 사건은?",),
+            help="1홉 직접 관계 탐색: 안중근 -[PARTICIPATED_IN]-> 사건",
+        )
+        ex_col2.button(
+            "🟢 [2홉] 윤봉길 참여 사건의 동료가 세운 조직은?",
+            use_container_width=True,
+            on_click=set_example_query,
+            args=("윤봉길이 참여한 사건에 같이 있던 인물이 세운 조직은?",),
+            help="2홉 연쇄 탐색: 윤봉길 -> 훙커우 공원 사건 <- 김구 -> 한인애국단",
+        )
+        ex_col3.button(
+            "🟢 [1홉] 유관순이 참여한 사건은?",
+            use_container_width=True,
+            on_click=set_example_query,
+            args=("유관순이 참여한 사건은?",),
+            help="1홉 직접 관계 탐색: 유관순 -[PARTICIPATED_IN]-> 3·1 운동",
+        )
 
-        if ex_col1.button("1홉: 안중근 참여 사건", use_container_width=True):
-            st.session_state["query_input"] = "안중근이 참여한 사건은?"
-        if ex_col2.button("2홉: 함께 참여한 인물이 세운 조직", use_container_width=True):
-            st.session_state["query_input"] = "안중근이 참여한 사건에 같이 있던 인물이 세운 조직은?"
-        if ex_col3.button("3홉: 의거 단체 설립자의 참여 사건", use_container_width=True):
-            st.session_state["query_input"] = "훙커우 공원 의거에 관련된 단체를 설립한 인물이 참여한 사건은?"
-        if ex_col4.button("거절 예시: 안중근 설립 방송국", use_container_width=True):
-            st.session_state["query_input"] = "안중근이 설립한 방송국은?"
+        st.markdown("##### 🛡️ 거절 가드레일 예시 (환각 방지 — 그래프 외 속성/단체):")
+        st.caption("※ 본 시스템은 인물·사건·조직의 참여/설립 관계만 다룹니다. 고향/출생지나 미등록 조직 등 근거가 없는 질문은 지어내지 않고 정직하게 거절합니다.")
+        ref_col1, ref_col2, ref_col3 = st.columns(3)
+        ref_col1.button(
+            "🔴 [거절] 유관순 열사의 고향은?",
+            use_container_width=True,
+            on_click=set_example_query,
+            args=("유관순 열사의 고향은?",),
+            help="고향/출생지(Location)는 스키마 외 속성이므로 가드레일이 안전하게 거절",
+        )
+        ref_col2.button(
+            "🔴 [거절] 안중근이 설립한 방송국은?",
+            use_container_width=True,
+            on_click=set_example_query,
+            args=("안중근이 설립한 방송국은?",),
+            help="지식 그래프 내에 방송국 설립 사실이 없으므로 거절",
+        )
+        ref_col3.button(
+            "🔴 [거절] 김구 참여 사건 동료가 세운 철강회사는?",
+            use_container_width=True,
+            on_click=set_example_query,
+            args=("김구가 참여한 사건에 같이 있던 인물이 세운 철강회사는?",),
+            help="2홉 탐색 후 관련 조직 부재로 거절",
+        )
 
         query_text = st.text_input(
             "질문을 입력하세요:",
-            value=st.session_state["query_input"],
+            value=st.session_state["main_query_field"],
             key="main_query_field",
         )
 
-        search_clicked = st.button("🔎 검색 및 답변 생성", type="primary") or auto_search
+        trigger_flag = st.session_state.pop("trigger_search", False)
+        search_clicked = st.button("🔎 검색 및 답변 생성", type="primary") or auto_search or trigger_flag
 
         if search_clicked and query_text.strip():
             with st.spinner("지식 그래프 경로 탐색 및 답변 생성 중..."):
