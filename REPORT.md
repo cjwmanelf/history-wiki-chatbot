@@ -378,12 +378,12 @@ Streamlit 웹 데모([`app.py`](file:///C:/Users/cjwma/OneDrive/%EB%B0%94%ED%83%
 #### 1) 💬 질문하기 탭 (2홉 질의응답 정상 동작)
 상단 [탐색 범위 및 질문 가이드] 배너와 함께 질의 시 **[답변 요약]**, **[탐색 및 추론 경로]**, **[근거 삼중항 표]**, **[출처 문서 원문 펼쳐보기(expander)]**가 완전하게 렌더링된다.
 
-![질문하기 탭 실행 화면](docs/demo_tab1_query.png)
+![질문하기 탭 실행 화면](docs/screenshot_tab1_query_full.png)
 
 #### 2) 🛡️ 환각 방지 거절 가드레일 동작 화면
 지식 그래프에 없는 사실(예: "유관순 열사의 고향은?")에 대해 허위 정보를 생성하지 않고 안전하게 거절 텍스트를 출력한다.
 
-![거절 가드레일 동작 화면](docs/demo_tab1_refusal.png)
+![거절 가드레일 동작 화면](docs/screenshot_tab1_refusal_full.png)
 
 #### 3) 📊 평가 결과 탭 (GraphRAG vs Basic RAG 대조)
 `output/eval.json` 데이터와 연동되어 홉수별 대조표, 거절 가드레일 정확도, 실패 층 분류 현황을 보여준다.
