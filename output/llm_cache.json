@@ -10,5 +10,8 @@
  "09fe794b77a033bc4f8afe62927ec3902a814bfa55e880538591c48e23516d81": "local",
  "38f1782938b6ed5bc97ab736696cdbec251930a725b3f92ba9d34a619ec18819": "[답변 요약]\n안중근은 항일의병운동에 참여하였습니다. (안중근 -[PARTICIPATED_IN]-> 항일의병운동)\n\n[탐색 및 추론 경로]\n안중근 -[PARTICIPATED_IN]-> 항일의병운동\n\n[근거 출처]\n(안중근, PARTICIPATED_IN, 항일의병운동) | 출처: 안중근 | 신뢰도: 높음",
  "3dfb09351f1a711627e6623c7416e5d6c47adc73131eab584c10a33888a6c700": "path",
- "72916f9af39517e4cdd6b95f52ca398261c28ad29c40e2605f8bce594ee1018b": "local"
+ "72916f9af39517e4cdd6b95f52ca398261c28ad29c40e2605f8bce594ee1018b": "local",
+ "bd466dd2a60a40ace91b3c44fab87cfecf25d1e0dfd1eca90a8083a72a58261e": "[답변 요약]\n김좌진이 참여한 전투인 봉오동 전투에 함께 참전한 인물 중 이범석이 세운 조직은 북로군정서이다.  \n경로: 김좌진 -[PARTICIPATED_IN]-> 봉오동 전투 <-[PARTICIPATED_IN]- 이범석 -[FOUNDED]-> 북로군정서\n\n[탐색 및 추론 경로]\n1) 김좌진 -[PARTICIPATED_IN]-> 봉오동 전투  \n2) 봉오동 전투 <-[PARTICIPATED_IN]- 이범석  \n3) 이범석 -[FOUNDED]-> 북로군정서\n\n[근거 출처]\n- (김좌진, PARTICIPATED_IN, 봉오동 전투) | 출처: 봉오동 전투  \n- (이범석, PARTICIPATED_IN, 봉오동 전투) | 출처: 봉오동 전투  \n- (이범석, FOUNDED, 북로군정서) | 출처: 이범석, 청산리 전투",
+ "6ef217c26401f40e855b96ae68754c39dbe82664d382a6e3c987c36ffaed3a5a": "[답변 요약]  \n김좌진이 참여한 전투 중 봉오동 전투에 함께 참전한 이범석이 세운 조직인 북로군정서는 청산리 전투에 참여했다.  \n(경로: 김좌진 -[PARTICIPATED_IN]-> 봉오동 전투 <-[PARTICIPATED_IN]- 이범석 -[FOUNDED]-> 북로군정서 -[PARTICIPATED_IN]-> 청산리 전투)\n\n[탐색 및 추론 경로]  \n1) 김좌진 -[PARTICIPATED_IN]-> 봉오동 전투  \n2) 봉오동 전투 <-[PARTICIPATED_IN]- 이범석  \n3) 이범석 -[FOUNDED]-> 북로군정서  \n4) 북로군정서 -[PARTICIPATED_IN]-> 청산리 전투\n\n[근거 출처]  \n- (김좌진, PARTICIPATED_IN, 봉오동 전투) | 출처: 봉오동 전투  \n- (이범석, PARTICIPATED_IN, 봉오동 전투) | 출처: 봉오동 전투  \n- (이범석, FOUNDED, 북로군정서) | 출처: 이범석, 청산리 전투  \n- (북로군정서, PARTICIPATED_IN, 청산리 전투) | 출처: 봉오동 전투, 북로군정서, 이범석, 청산리 전투",
+ "a633a573981432bc79ce31004a8422ad40a70d45b22f47d7e74c91cc20b74947": "local"
 }
