@@ -195,7 +195,7 @@ HISTORY WIKI CHATBOT/
 - 상단 탐색 범위 및 질문 가이드 배너, 3블록 최종 답변, 홉별 실제 연결 순회 경로(`traversed_path`), 근거 삼중항 표, 원문 근거 문서 Expander
 - **URL 쿼리 파라미터 자동 실행 지원**: `?q=<질문>&auto=1` 형식으로 특정 질문 자동 입력 및 즉시 실행 가능
 
-![질문하기 데모 화면](docs/screenshot_tab1_query_full.png)
+![질문하기 데모 화면](docs/screenshot_tab1_qa_full.png)
 
 ---
 
