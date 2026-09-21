@@ -29,7 +29,7 @@
 
 | 📊 [3] GraphRAG vs Basic RAG 대조 평가 | ⚙️ [4] OpenAI API 키 보안 관리 설정 |
 | :---: | :---: |
-| ![평가 결과 탭](docs/demo_tab2_eval.png) | ![설정 탭](docs/demo_tab3_settings.png) |
+| ![평가 결과 탭](docs/screenshot_tab2_eval_full.png) | ![설정 탭](docs/demo_tab3_settings.png) |
 
 ---
 
@@ -202,7 +202,7 @@ HISTORY WIKI CHATBOT/
 ### 2. 탭 2 📊 평가 결과
 - 홉 수별 대조표 (GraphRAG 100% vs Basic RAG 54.5%), 거절 정확도(100%), 환각 건수(0건), 실패 층(Index/Retrieval/Generation) 자동 분류 집계 카드
 
-![평가 결과 데모 화면](docs/screenshot_tab2_eval.png)
+![평가 결과 데모 화면](docs/screenshot_tab2_eval_full.png)
 
 ---
 

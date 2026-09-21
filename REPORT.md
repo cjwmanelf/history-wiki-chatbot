@@ -388,7 +388,7 @@ Streamlit 웹 데모([`app.py`](file:///C:/Users/cjwma/OneDrive/%EB%B0%94%ED%83%
 #### 3) 📊 평가 결과 탭 (GraphRAG vs Basic RAG 대조)
 `output/eval.json` 데이터와 연동되어 홉수별 대조표, 거절 가드레일 정확도, 실패 층 분류 현황을 보여준다.
 
-![평가 결과 탭 화면](docs/demo_tab2_eval.png)
+![평가 결과 탭 화면](docs/screenshot_tab2_eval_full.png)
 
 #### 4) ⚙️ 설정 탭 (보안 API 키 관리)
 OpenAI API 키를 비밀번호 필드로 안전하게 입력받고 마스킹 처리하여 세션 적용/저장/삭제 및 연결 테스트를 제공한다.
